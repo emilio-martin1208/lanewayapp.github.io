@@ -135,6 +135,39 @@ has not been changed.
 
 ---
 
+# Public Site Tagline Updated - Friday Oct 2
+
+### Emilio's Work
+
+*Time worked: 12m (11:00 AM to 11:12 AM)*
+
+## Timeline
+
+**11:00 AM - Tagline Change Requested.**
+The requested wording is "Everything in between." The initial product-repo
+change did not reach the separate public-site checkout, which became clear
+when the live homepage was opened for review.
+
+**11:09 AM - Website Tagline Updated for Preview.**
+Opened website issue #9 before editing. Created an isolated worktree from the
+public `main` branch because the existing site checkout has unrelated changes.
+Replaced the visible homepage headline and the browser and social-preview
+metadata with the requested tagline. The detailed supporting product copy is
+unchanged. Local preview was prepared before the pull request.
+
+**11:11 AM - Local Website Preview Verified.**
+The local homepage has the requested H1 and browser title. All five inline
+scripts parse and the diff has no whitespace errors. The user approved the
+preview and requested the pull request.
+
+**11:12 AM - Pull Request Opened.**
+Committed the isolated website change and opened public website PR #10 from
+`emilio-martin1208:codex/website-tagline` to `main`. It closes website issue
+#9 when it merges. The local preview remains available at
+`http://127.0.0.1:3002/`.
+
+---
+
 # A Calmer Page That Still Moves - Tuesday Sep 8
 
 ### Emilio's Work
