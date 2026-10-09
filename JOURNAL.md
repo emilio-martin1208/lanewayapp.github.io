@@ -1,3 +1,42 @@
+# Explain the Missing Leg on the Landing Page - Friday Oct 9
+
+### Emilio's Work
+
+*Time worked: 5h 46m by clock checks (11:26 AM to 5:12 PM). This span includes unmeasured interruptions and is not an active-work estimate.*
+
+## Timeline
+
+**11:26 AM - Informative landing page animations requested.**
+Read the private product journal and inspected the current website, its local
+changes, and both issue trackers. Opened product issue #155 before editing.
+The older website checkout had an unrelated uncommitted interaction pass and
+was far from public main, so a clean clone of current main was pulled into an
+isolated directory.
+
+**11:29 AM - A user-controlled route explanation was chosen.**
+The existing page already had an animated map, hover traces, and a simulated
+feed. It lacked a simple explanation of what happens when a route leg cannot
+be verified. Added a four-step illustration between the missing-connections
+and evidence sections. Native radio controls show the request, route legs,
+evidence labels, and disclosed final plan. The shuttle stays dashed and
+unverified. The example is explicitly illustrative and never offers pickup
+directions. Changed the existing journey headline and verdict label, which
+had called every leg sourced while the shuttle was described as unverified.
+
+**5:12 PM - Source and browser checks completed.**
+The four radio states responded in the local browser. A 375px phone viewport
+showed the full disclosed route without horizontal overflow; the desktop
+layout was also inspected. The markup works without JavaScript, and the
+existing reduced-motion rule removes transitions while retaining the selected
+state. All six inline scripts parse, HTML IDs are unique, local assets and
+fragment targets exist, and the diff has no whitespace or non-ASCII errors.
+An initial local-browser approval check timed out, then a fresh preview tab
+allowed the visual review. No engine code changed, so no routing benchmark was
+run. Public deployment remains unverified and issue #155 stays open until the
+website change ships.
+
+---
+
 # The Elastic Is Gone - Tuesday Sep 15
 
 *Written 5:06 PM.*

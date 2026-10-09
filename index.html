@@ -279,6 +279,70 @@ section{padding:clamp(64px,9vw,132px) 0}
 .reading h2{font-size:clamp(24px,3.2vw,34px);line-height:1.16;max-width:19ch;margin-bottom:26px}
 .reading .body{margin-left:clamp(0px,14vw,190px)}
 
+/* A user-controlled route story. The radio inputs keep every step usable
+   without script; motion only reveals the consequence of each choice. */
+.explainer-intro{display:flex;justify-content:space-between;align-items:end;gap:24px}
+.explainer-intro .lede{max-width:39ch;margin:0}
+.explainer-grid{display:grid;grid-template-columns:minmax(280px,.84fr) minmax(0,1.16fr);margin-top:42px;border-top:1px solid var(--hair);border-bottom:1px solid var(--hair)}
+.explainer-steps{border:0;margin:0;padding:0;min-width:0}
+.explainer-step{position:relative;display:grid;grid-template-columns:28px 1fr;gap:16px;padding:21px 24px 21px 0;border-bottom:1px solid var(--hair);cursor:pointer;transition:background-color .25s ease,padding-left .25s ease}
+.explainer-step:last-child{border-bottom:0}
+.explainer-step input{position:absolute;width:1px;height:1px;opacity:0}
+.explainer-step:has(input:focus-visible){outline:2px solid var(--accent);outline-offset:-3px}
+.explainer-step:has(input:checked){padding-left:18px;background:var(--surface);box-shadow:inset 3px 0 var(--accent)}
+.explainer-step .num{font:500 11px "Geist Mono",ui-monospace,Menlo,monospace;color:var(--accent);padding-top:3px}
+.explainer-step strong{display:block;font-size:16px;font-weight:550;line-height:1.35}
+.explainer-step small{display:block;margin-top:5px;color:var(--muted);font-size:13px;line-height:1.5}
+.explainer-visual{--unknown:#9B5B0B;position:relative;overflow:hidden;min-height:480px;padding:clamp(22px,3vw,42px);border-left:1px solid var(--hair);background:var(--surface)}
+@media (prefers-color-scheme:dark){.explainer-visual{--unknown:#F2AC53}}
+.explainer-visual::before{content:"";position:absolute;inset:0;background-image:linear-gradient(var(--hair) 1px,transparent 1px),linear-gradient(90deg,var(--hair) 1px,transparent 1px);background-size:38px 38px;opacity:.32;pointer-events:none}
+.explainer-visual>*{position:relative}
+.explainer-meta{display:flex;justify-content:space-between;gap:20px;color:var(--muted);font:500 11px "Geist Mono",ui-monospace,Menlo,monospace;letter-spacing:.06em;text-transform:uppercase}
+.explainer-request{display:flex;justify-content:space-between;gap:16px;align-items:center;margin-top:29px;padding:18px 20px;background:var(--bg);border:1px solid var(--hair);box-shadow:0 6px 22px rgba(23,33,51,.05);transition:border-color .3s ease,transform .3s ease}
+.explainer-request span{display:block;color:var(--muted);font:500 10px "Geist Mono",ui-monospace,Menlo,monospace;text-transform:uppercase;letter-spacing:.08em}
+.explainer-request strong{display:block;margin-top:4px;font-size:16px;font-weight:550;line-height:1.3}
+.explainer-request svg{flex:none;color:var(--accent)}
+.explainer-route{list-style:none;margin:18px 0 0;padding:0 0 0 12px}
+.explainer-leg{position:relative;display:grid;grid-template-columns:24px minmax(0,1fr) auto;align-items:center;gap:13px;min-height:53px;border-left:2px solid var(--accent);padding:0 0 0 15px;opacity:.24;transform:translateY(9px);transition:opacity .35s ease,transform .35s ease}
+.explainer-leg:nth-child(2){transition-delay:.06s}
+.explainer-leg:nth-child(3){transition-delay:.12s}
+.explainer-leg:nth-child(4){transition-delay:.18s}
+.explainer-leg-unknown{border-left:2px dashed var(--unknown)}
+.explainer-leg::before{content:"";position:absolute;left:-6px;top:calc(50% - 5px);width:9px;height:9px;border:2px solid var(--accent);border-radius:50%;background:var(--surface)}
+.explainer-leg-unknown::before{border-color:var(--unknown)}
+.explainer-leg .num{font:500 10px "Geist Mono",ui-monospace,Menlo,monospace;color:var(--muted)}
+.explainer-leg strong{font-size:14px;font-weight:500}
+.explainer-evidence{font:500 10px "Geist Mono",ui-monospace,Menlo,monospace;color:var(--verified);opacity:0;transform:translateX(-8px);transition:opacity .25s ease,transform .25s ease}
+.explainer-leg-unknown .explainer-evidence{color:var(--unknown)}
+.explainer-result{margin-top:18px;padding:15px 17px;background:var(--bg);border-left:3px solid var(--unknown);opacity:.25;transform:translateY(8px);transition:opacity .3s ease,transform .3s ease}
+.explainer-result strong{display:block;font-size:13px;font-weight:600}
+.explainer-result p{margin:4px 0 0;font-size:12px;line-height:1.5;color:var(--muted)}
+.explainer-grid:has(input:not([value="request"]):checked) .explainer-leg{opacity:1;transform:none}
+.explainer-grid:has(input[value="check"]:checked) .explainer-evidence,.explainer-grid:has(input[value="plan"]:checked) .explainer-evidence{opacity:1;transform:none}
+.explainer-grid:has(input[value="plan"]:checked) .explainer-result{opacity:1;transform:none}
+.explainer-grid:has(input[value="request"]:checked) .explainer-request{border-color:var(--accent);transform:translateY(-3px)}
+.explainer-caption{margin:15px 0 0;color:var(--muted);font-size:12px}
+@media (max-width:900px){
+  .explainer-intro{display:block}.explainer-intro .lede{margin-top:20px}
+  .explainer-grid{grid-template-columns:1fr}
+  .explainer-steps{display:grid;grid-template-columns:repeat(2,minmax(0,1fr))}
+  .explainer-step{padding:18px}.explainer-step:nth-child(odd){border-right:1px solid var(--hair)}
+  .explainer-step:nth-child(-n+2){border-bottom:1px solid var(--hair)}
+  .explainer-step:nth-child(n+3){border-bottom:0}
+  .explainer-visual{border-left:0;border-top:1px solid var(--hair)}
+}
+@media (max-width:560px){
+  .explainer-steps{grid-template-columns:1fr}
+  .explainer-step,.explainer-step:nth-child(odd){border-right:0}
+  .explainer-step:nth-child(3){border-bottom:1px solid var(--hair)}
+  .explainer-step{padding:15px 18px;gap:12px}
+  .explainer-step:has(input:checked){padding-left:22px}
+  .explainer-visual{min-height:0;padding:22px 18px}
+  .explainer-request{padding:15px 13px}.explainer-request strong{font-size:13px}
+  .explainer-leg{grid-template-columns:20px minmax(0,1fr);gap:8px;min-height:64px}
+  .explainer-evidence{grid-column:2;margin-top:-12px}
+}
+
 /* Verification: a ledger, which is what a verifier produces. */
 .ledger{margin-top:40px;border-top:1px solid var(--ink)}
 .ledger .row{border-bottom:1px solid var(--hair)}
@@ -925,7 +989,7 @@ footer .wrap{align-items:center;gap:24px}
         </div>
         <div class="panel" data-panel="2">
           <span class="mono">Laneway</span>
-          <h2>Four legs, each one sourced.</h2>
+          <h2>Four legs, with the gap shown.</h2>
           <ol>
             <li data-hl="0"><span class="k num">01</span>Walk to the LINK platform, level 3</li>
             <li data-hl="1"><span class="k num">02</span>LINK train to Terminal 3</li>
@@ -934,7 +998,7 @@ footer .wrap{align-items:center;gap:24px}
           </ol>
         </div>
         <div class="panel" data-panel="3">
-          <span class="mono">Verified</span>
+          <span class="mono">Evidence checked</span>
           <h2>Checked leg by leg, before you see it.</h2>
           <p>Three legs are sourced. The unpublished shuttle stays visible and clearly unverified.</p>
         </div>
@@ -956,9 +1020,39 @@ footer .wrap{align-items:center;gap:24px}
   </div>
 </section>
 
+<section class="explainer light-section" id="how-it-works" aria-labelledby="explainer-title">
+  <div class="wrap">
+    <p class="eyebrow section-index">02 / From request to route</p>
+    <div class="explainer-intro">
+      <h2 class="section-title" id="explainer-title">See What Happens<br>to a Missing Leg.</h2>
+      <p class="lede">Choose a step to see how an airport trip becomes one plan, including the part that cannot be verified.</p>
+    </div>
+    <div class="explainer-grid">
+      <div class="explainer-steps" role="radiogroup" aria-label="Steps in an illustrative Laneway trip">
+        <label class="explainer-step"><input type="radio" name="route-step" value="request" checked><span class="num">01</span><span><strong>Describe the trip</strong><small>Give your arrival point and destination in plain language.</small></span></label>
+        <label class="explainer-step"><input type="radio" name="route-step" value="connect"><span class="num">02</span><span><strong>Connect the legs</strong><small>Find the walk, rail, and shuttle links a road map may miss.</small></span></label>
+        <label class="explainer-step"><input type="radio" name="route-step" value="check"><span class="num">03</span><span><strong>Check the evidence</strong><small>Attach sources to supported legs. Flag the shuttle when pickup proof is missing.</small></span></label>
+        <label class="explainer-step"><input type="radio" name="route-step" value="plan"><span class="num">04</span><span><strong>Read one honest plan</strong><small>See the route with the unknown leg still visible before you travel.</small></span></label>
+      </div>
+      <div class="explainer-visual" aria-hidden="true">
+        <div class="explainer-meta"><span>A route taking shape</span><span>Illustration only</span></div>
+        <div class="explainer-request"><div><span>From</span><strong>Airport terminal</strong></div><svg width="26" height="16" viewBox="0 0 26 16"><path d="M1 8h23m-7-6 7 6-7 6" fill="none" stroke="currentColor" stroke-width="1.5"/></svg><div><span>To</span><strong>Off-airport rental</strong></div></div>
+        <ol class="explainer-route">
+          <li class="explainer-leg"><span class="num">01</span><strong>Terminal walk</strong><span class="explainer-evidence">Source linked</span></li>
+          <li class="explainer-leg"><span class="num">02</span><strong>Rail connection</strong><span class="explainer-evidence">Source linked</span></li>
+          <li class="explainer-leg explainer-leg-unknown"><span class="num">03</span><strong>Shuttle pickup</strong><span class="explainer-evidence">Unverified</span></li>
+          <li class="explainer-leg"><span class="num">04</span><strong>Counter walk</strong><span class="explainer-evidence">Source linked</span></li>
+        </ol>
+        <div class="explainer-result"><strong>One route, with the gap disclosed.</strong><p>Pickup details are unverified. Check the operator before relying on this leg.</p></div>
+      </div>
+    </div>
+    <p class="explainer-caption">Illustrative example, not live directions or a verified itinerary. The evidence ledger below shows how claims are judged.</p>
+  </div>
+</section>
+
 <section id="verification" class="contrast-section">
   <div class="wrap">
-    <p class="eyebrow section-index">02 / Evidence, not estimates</p>
+    <p class="eyebrow section-index">03 / Evidence, not estimates</p>
     <h2 class="section-title">Trust Is Built.<br>One Fact at a Time.</h2>
     <div class="lede measure" style="margin-top:24px">
       <p>Plausible is not proof. Laneway checks every claim and can return supported, contradicted, or unsupported.</p>
@@ -987,7 +1081,7 @@ footer .wrap{align-items:center;gap:24px}
 
 <section class="light-section">
   <div class="wrap">
-    <p class="eyebrow section-index">03 / Under the hood</p>
+    <p class="eyebrow section-index">04 / Under the hood</p>
     <h2 class="section-title">Intelligence Meets<br>a Reality Check.</h2>
     <div class="lede measure" style="margin-top:24px">
       <p>The model proposes. Deterministic systems retrieve, compose, cache, and verify.</p>
@@ -1006,7 +1100,7 @@ footer .wrap{align-items:center;gap:24px}
 <section id="activity" class="light-section">
   <div class="wrap">
     <div class="activity-head">
-      <div><p class="eyebrow section-index">04 / In motion</p>
+      <div><p class="eyebrow section-index">05 / In motion</p>
       <h2>One Journey.<br>Many Ways to Move.</h2></div>
       <p class="activity-note"><b>Simulated activity.</b> Generated route examples, never customer telemetry.</p>
     </div>
@@ -1021,7 +1115,7 @@ footer .wrap{align-items:center;gap:24px}
 
 <section id="status" class="light-section">
   <div class="wrap">
-    <p class="eyebrow section-index">05 / Building in the open</p>
+    <p class="eyebrow section-index">06 / Building in the open</p>
     <h2 class="section-title">Real Progress.<br>Honest Limits.</h2>
     <div class="cols">
       <div>
