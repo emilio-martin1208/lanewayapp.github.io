@@ -2,7 +2,7 @@
 
 ### Emilio's Work
 
-*Time worked: 5h 46m by clock checks (11:26 AM to 5:12 PM). This span includes unmeasured interruptions and is not an active-work estimate.*
+*Time worked: 5h 47m by clock checks (11:26 AM to 5:13 PM). This span includes unmeasured interruptions and is not an active-work estimate.*
 
 ## Timeline
 
@@ -34,6 +34,11 @@ An initial local-browser approval check timed out, then a fresh preview tab
 allowed the visual review. No engine code changed, so no routing benchmark was
 run. Public deployment remains unverified and issue #155 stays open until the
 website change ships.
+
+**5:13 PM - Review pull request opened.**
+Committed the page and journal as e5fd66a and opened website PR #11 from
+Emilio's fork against current public main. The PR has not been merged or
+deployed. Product issue #155 remains open for that final step.
 
 ---
 
