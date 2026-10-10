@@ -1,3 +1,31 @@
+# Remove the Landing Page Pipeline - Saturday Oct 10
+
+### Emilio's Work
+
+*Time worked: one prompt at the 12:37 PM clock check. The latest clock check was 12:39 PM, a 2m elapsed work span since that check.*
+
+## Timeline
+
+**12:37 PM - Emilio asked to remove Under the hood.**
+Read both journals, checked the shared issue tracker and #155 comments, and
+pulled the website and product journal review branches. Recorded the
+direction change on #155 before editing.
+
+**12:39 PM - The pipeline section was removed.**
+Deleted the six-stage "Intelligence Meets a Reality Check" section from the
+main landing page and removed every CSS rule and comment used only by its
+pipeline cards. Connections now directly follows Evidence. Renumbered
+Connections to 04, simulated activity to 05, and status to 06.
+
+The local browser showed the Evidence and Connections edges at the same
+position, with no leftover pipeline element or heading and no horizontal
+overflow at the default 625px width. The new section labels appeared in
+order. `git diff --check` passed. No product code changed, so no routing
+benchmark ran. Website PR #11 and product journal PR #157 remain the review
+path; #155 stays open until the website is published and verified.
+
+---
+
 # Put Connections on the Landing Page - Saturday Oct 10
 
 ### Emilio's Work
