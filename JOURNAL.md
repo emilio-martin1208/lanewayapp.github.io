@@ -257,6 +257,13 @@ Browser logs showed no warnings or errors. Inline scripts parse; IDs,
 control references, fragment targets, local assets, and whitespace checks
 pass. No Swift or engine code changed, so no routing benchmark ran.
 
+**12:16 AM Saturday Oct 10 - Cursor revision submitted.**
+Pushed website commit `fe53f86` to PR #11 and product journal commit
+`aa5f0c1` to PR #157. Updated both PR descriptions and commented on
+#155 with the behavior and checks. Both PRs were mergeable and the
+product journal's engine checks passed. The preview remains local;
+#155 stays open until publication and live verification.
+
 ---
 
 # The Elastic Is Gone - Tuesday Sep 15
