@@ -2,7 +2,7 @@
 
 ### Emilio's Work
 
-*Time worked: 12h 17m by clock checks (11:26 AM to 11:43 PM, the first clock check after the latest prompt). This span includes unmeasured interruptions and is not an active-work estimate.*
+*Time worked: 12h 31m by clock checks (11:26 AM to 11:57 PM, the first clock check after the latest prompt). This span includes unmeasured interruptions and is not an active-work estimate.*
 
 ## Timeline
 
@@ -188,6 +188,40 @@ Pushed website commit `03b0ec0` to PR #11 and product journal commit
 with the changed presentation and verification. Both PRs were mergeable;
 the product journal's engine checks passed. The public site is unchanged,
 so #155 stays open until the website is published and checked live.
+
+**11:57 PM - Emilio asked for more advanced animation.**
+The three interactive windows and floating stage were right, but the
+automatic motion still felt like simple sheet transitions. Rechecked #155
+and its comments, confirmed both PRs were open with no review feedback,
+pulled the website and product journal branches, and recorded the new
+direction on #155 before editing.
+
+**12:04 AM Saturday Oct 10 - The guided route sequence was built.**
+The replay now shows a touch cue traveling between the real UI controls:
+opening the route, selecting the verified train, opening its source,
+selecting the shuttle, and opening its unsupported claim. A route marker
+uses the train SVG path's own geometry to travel to Viscount, then pings
+at arrival. The active window gains an amber glow, and the evidence card
+gets a short scan reveal. The cue does not block clicks and is omitted at
+narrow widths. The sequence now continues on hover; a real click or
+keyboard focus takes control. Animation pauses offscreen or in a hidden
+tab, and reduced-motion visitors keep manual controls without autoplay.
+The shuttle path stays dashed and has no traveling marker.
+
+Browser testing exposed a preexisting layout fault in the first window:
+its absolute map and sheet children were positioned against the showcase
+instead of their own UI surface, clipping the route title when opened.
+Adding layout containment to each fixed-height UI surface fixed the
+containing block; the title and all three leg controls now remain inside
+the route window. The browser showed the guide, train marker, source and
+unsupported states at 1440px. Manual train selection animated the marker;
+manual sheet opening, closing, and Escape focus return worked. At 390px
+the unsupported sheet was readable with no horizontal overflow. Browser
+logs had no warnings or errors. All eight inline scripts parse, 41 IDs
+are unique, all three `aria-controls` targets resolve, local assets and
+fragment links exist, and whitespace and Markdown ASCII checks pass. No
+product or engine code changed, so no routing benchmark ran. The public
+site remains unchanged and #155 stays open until publication.
 
 ---
 
