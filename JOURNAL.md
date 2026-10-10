@@ -1,3 +1,40 @@
+# Put Connections on the Landing Page - Saturday Oct 10
+
+### Emilio's Work
+
+*Time worked: one prompt at the 12:30 PM clock check. The latest clock check was 12:33 PM, a 3m elapsed work span since that check.*
+
+## Timeline
+
+**12:30 PM - Emilio changed the Connections placement.**
+He wanted the complete profile showcase on the main web page directly before
+simulated activity. Read the website and product journals, checked the issue
+tracker and #158 comments, and pulled both review branches before editing.
+Commented on #158 with the revised placement and approach.
+
+**12:33 PM - The concept moved into the landing page.**
+Moved the existing working profile, Connections list, Maya profile, Osaka trip,
+photo gallery, memories, replay control, and guided cursor into a full
+`#connections` section in `index.html`, immediately before `#activity`.
+Changed the app demo call to action to an in-page link, renumbered the later
+section labels, scoped the demo CSS to the new section, and removed the
+now-duplicated `connections.html`. Updated the site documentation. The
+fictional concept label and current Canada-only and social-feature limits
+remain visible in the section; the sample Verified badge still describes
+source evidence for a route, not proof of a visit or media authenticity.
+
+Reviewed the integrated section at 625px, 1440px, and 390px. The in-page
+link lands on the section, guided playback reaches the trip, manual profile
+navigation and photo selection work, all sample images load, and the phone
+layout has no horizontal overflow. Browser logs showed no warnings or errors.
+Unique IDs, ARIA references, local asset paths, image alt attributes, inline
+JavaScript syntax, ASCII, and whitespace checks pass. No engine code changed,
+so no routing benchmark ran. Website PR #11 and product journal PR #157
+remain the review path. Issue #158 remains open until publication and a live
+site check.
+
+---
+
 # Connections Profile Concept - Saturday Oct 10
 
 ### Emilio's Work

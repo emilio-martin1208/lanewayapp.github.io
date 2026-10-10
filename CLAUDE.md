@@ -7,8 +7,7 @@ GitHub Pages at <https://lanewayapp.github.io/>.
 
 Pages are self-contained:
 
-- `index.html` - what Laneway is, the anchor case, how verification works, honest status
-- `connections.html` - an explicitly illustrative profile and Connections concept, not a released social feature
+- `index.html` - what Laneway is, the anchor case, verification, an illustrative Connections concept, and honest status
 - `status.html` - the shape of the work, drawn from the engine repo's history
 - `devlog.html` - what got built, what broke, what was decided. Newest entry first.
 - `legal.html` - terms of service, privacy policy, and EULA, all three on one page

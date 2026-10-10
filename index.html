@@ -871,6 +871,113 @@ footer .wrap{align-items:center;gap:24px}
 @media (min-width:1600px){
   .top .wrap{max-width:clamp(1320px,78vw,2200px)}
 }
+/* Connections profile concept. The inner UI deliberately stays light in both themes. */
+#connections{--blue:#243F64;--line:#DCE3EA;--cool:#F2F5F7;--muted:#5B6775;--navy:#172133;--ink:#151515;--paper:#fff;color:#151515;color-scheme:light}
+#connections{padding:34px 0 90px;background:var(--cool)}
+#connections .showcase-head{display:flex;align-items:end;justify-content:space-between;gap:25px;margin-bottom:22px}
+#connections .showcase-head h3{margin:6px 0 0;font-size:clamp(25px,3vw,38px);font-weight:550;letter-spacing:-.045em;line-height:1.12}
+#connections .showcase-head .mono{color:var(--blue)}
+#connections .replay{padding:9px 16px;border:1px solid #A9B8C8;border-radius:999px;background:#fff;color:var(--blue);font-size:13px;font-weight:650;white-space:nowrap}
+#connections .replay:hover{border-color:var(--blue);background:#E9EFF5}
+#connections .profile-demo{position:relative;display:grid;grid-template-columns:260px minmax(0,1fr);gap:8px;min-height:640px;padding:8px;border:1px solid #334052;border-radius:30px;background:var(--navy);color:#151515;color-scheme:light;box-shadow:0 30px 70px rgba(23,33,51,.22),0 4px 14px rgba(23,33,51,.12);isolation:isolate}
+#connections .profile-sidebar,#connections .profile-main{min-width:0;border-radius:23px;background:#fff}
+#connections .profile-sidebar{display:flex;flex-direction:column;gap:20px;padding:23px 18px;background:#EFF3F6}
+#connections .sidebar-label{display:flex;align-items:center;justify-content:space-between;gap:8px;color:#536278}
+#connections .sidebar-label .sample{padding:4px 8px;border:1px solid #CBD5DF;border-radius:99px;font-size:9px}
+#connections .avatar{display:grid;place-items:center;width:60px;height:60px;border-radius:19px;background:var(--navy);color:#fff;font-size:24px;font-weight:600;letter-spacing:-.05em}
+#connections .profile-sidebar h3{margin:12px 0 3px;font-size:22px;font-weight:570;letter-spacing:-.04em}
+#connections .profile-sidebar p{margin:0;color:var(--muted);font-size:12px;line-height:1.5}
+#connections .sidebar-actions{display:grid;gap:7px}
+#connections .sidebar-actions button{display:flex;align-items:center;gap:12px;width:100%;padding:12px;border:1px solid transparent;border-radius:12px;background:transparent;color:#344153;text-align:left;font-size:13px;font-weight:650}
+#connections .sidebar-actions button.is-current,#connections .sidebar-actions button:hover{border-color:#BFCBD8;background:#fff;color:var(--navy)}
+#connections .sidebar-actions svg{width:18px;height:18px;flex:none}
+#connections .sidebar-foot{margin-top:auto;padding:15px;border:1px solid #D5DEE6;border-radius:16px;background:#fff}
+#connections .sidebar-foot b{display:block;margin-bottom:5px;font-size:12px}
+#connections .sidebar-foot p{font-size:11px}
+#connections .profile-main{position:relative;overflow:hidden;min-height:624px;background:#F9FAFB}
+#connections .main-bar{position:relative;z-index:2;display:flex;justify-content:space-between;align-items:center;gap:10px;padding:19px 26px;border-bottom:1px solid var(--line);background:#fff}
+#connections .main-bar .mono{color:#586A7D}
+#connections .main-bar .state{color:var(--blue);font-size:11px;font-weight:700}
+#connections .profile-screen{display:none;padding:28px 30px 32px;min-height:548px;animation:screen-enter .55s cubic-bezier(.2,.8,.2,1) both}
+#connections .profile-demo[data-scene="connections"] .screen-connections,#connections .profile-demo[data-scene="friend"] .screen-friend,#connections .profile-demo[data-scene="trip"] .screen-trip{display:block}
+@keyframes screen-enter{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:none}}
+#connections .screen-head{display:flex;align-items:start;justify-content:space-between;gap:18px;margin-bottom:24px}
+#connections .screen-head h2{margin:3px 0 4px;font-size:clamp(27px,3.4vw,42px);font-weight:580;line-height:1.08;letter-spacing:-.055em}
+#connections .screen-head p{margin:0;color:var(--muted);font-size:13px}
+#connections .screen-head .mono{color:var(--blue)}
+#connections .back{display:inline-flex;gap:7px;align-items:center;padding:0;border:0;background:none;color:var(--blue);font-size:12px;font-weight:700}
+#connections .back:hover{text-decoration:underline}
+#connections .connection-row{display:flex;align-items:center;gap:17px;width:100%;padding:18px;border:1px solid var(--line);border-radius:20px;background:#fff;text-align:left;box-shadow:0 8px 25px rgba(23,33,51,.055);transition:transform .3s,box-shadow .3s,border-color .3s}
+#connections .connection-row:hover,#connections .connection-row:focus-visible{transform:translateY(-4px);border-color:#A6B8CB;box-shadow:0 18px 35px rgba(23,33,51,.13)}
+#connections .friend-avatar{display:grid;place-items:center;flex:none;width:54px;height:54px;border-radius:17px;background:#DCE6F0;color:var(--blue);font-size:22px;font-weight:650}
+#connections .connection-row strong{display:block;font-size:17px;letter-spacing:-.03em}
+#connections .connection-row small{display:block;margin-top:3px;color:var(--muted);font-size:12px}
+#connections .connection-row .verified{margin-top:8px;padding:3px 7px;font-size:10px}
+#connections .connection-row .arrow{margin-left:auto;color:var(--blue);font-size:22px}
+#connections .preview-explain{max-width:60ch;margin:26px 0 0;color:#687687;font-size:12px}
+#connections .friend-profile{display:grid;grid-template-columns:minmax(0,1fr) 180px;gap:25px;align-items:end;padding:22px;border:1px solid var(--line);border-radius:21px;background:#fff}
+#connections .friend-profile .name{display:flex;align-items:center;gap:14px}
+#connections .friend-profile h3{margin:0;font-size:23px;letter-spacing:-.04em}
+#connections .friend-profile p{margin:3px 0 0;color:var(--muted);font-size:12px}
+#connections .friend-profile .photo-strip{display:flex;justify-content:flex-end;align-items:end;height:96px}
+#connections .friend-profile .photo-strip img{width:67px;height:87px;margin-left:-16px;object-fit:cover;border:3px solid #fff;border-radius:12px;box-shadow:0 6px 14px rgba(23,33,51,.16);transform:rotate(-6deg)}
+#connections .friend-profile .photo-strip img:nth-child(2){transform:translateY(-8px) rotate(5deg)}
+#connections .friend-profile .photo-strip img:nth-child(3){transform:rotate(10deg)}
+#connections .profile-demo[data-scene="friend"] .photo-strip img{animation:photo-fan .55s cubic-bezier(.2,.8,.2,1) both}
+#connections .profile-demo[data-scene="friend"] .photo-strip img:nth-child(2){animation-delay:.1s}
+#connections .profile-demo[data-scene="friend"] .photo-strip img:nth-child(3){animation-delay:.2s}
+@keyframes photo-fan{from{opacity:0;translate:0 30px;rotate:-12deg}to{opacity:1;translate:0 0;rotate:0deg}}
+#connections .trip-card{display:grid;grid-template-columns:40% minmax(0,1fr);overflow:hidden;width:100%;min-height:205px;margin-top:18px;padding:0;border:1px solid var(--line);border-radius:21px;background:#fff;text-align:left;box-shadow:0 10px 28px rgba(23,33,51,.08);transition:transform .3s,box-shadow .3s}
+#connections .trip-card:hover,#connections .trip-card:focus-visible{transform:translateY(-5px);box-shadow:0 24px 42px rgba(23,33,51,.17)}
+#connections .trip-card img{width:100%;height:100%;object-fit:cover}
+#connections .trip-card-body{display:flex;flex-direction:column;justify-content:space-between;gap:16px;padding:23px}
+#connections .trip-card .mono{color:var(--muted)}
+#connections .trip-card strong{display:block;margin-top:6px;font-size:clamp(24px,3vw,34px);line-height:1.05;letter-spacing:-.05em}
+#connections .trip-card .trip-meta{display:flex;align-items:center;justify-content:space-between;gap:10px;color:var(--muted);font-size:12px}
+#connections .verified{display:inline-flex;align-items:center;gap:6px;padding:6px 9px;border:1px solid #C9D8E8;border-radius:99px;background:#E5EDF6;color:var(--blue);font-size:11px;font-weight:750;white-space:nowrap}
+#connections .verified svg{width:14px;height:14px;flex:none}
+#connections .trip-head{display:flex;align-items:end;justify-content:space-between;gap:14px;margin:15px 0 18px}
+#connections .trip-head h2{margin:0;font-size:clamp(30px,3.7vw,48px);font-weight:580;line-height:1;letter-spacing:-.06em}
+#connections .trip-head .meta{color:var(--muted);font-size:12px}
+#connections .trip-head .verified{margin-top:10px}
+#connections .profile-demo[data-scene="trip"] .trip-head .verified{animation:badge-arrive .65s cubic-bezier(.2,.8,.2,1) .22s both}
+@keyframes badge-arrive{from{opacity:0;transform:scale(.7)}to{opacity:1;transform:scale(1)}}
+#connections .trip-layout{display:grid;grid-template-columns:minmax(0,1.25fr) minmax(220px,.75fr);gap:18px}
+#connections .photo-view{position:relative;overflow:hidden;height:290px;border-radius:19px;background:#D5DEE7}
+#connections .photo-view img{display:block;width:100%;height:100%;object-fit:cover;transition:opacity .22s,transform .7s}
+#connections .photo-view.is-changing img{opacity:.45;transform:scale(1.04)}
+#connections .photo-view .photo-label{position:absolute;left:13px;bottom:13px;max-width:calc(100% - 26px);padding:7px 10px;border-radius:8px;background:rgba(16,24,36,.78);color:#fff;font-size:11px}
+#connections .photo-thumbs{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px;margin-top:8px}
+#connections .photo-thumbs a{position:relative;display:block;overflow:hidden;height:68px;border:3px solid transparent;border-radius:10px}
+#connections .photo-thumbs a[aria-current="true"]{border-color:var(--blue)}
+#connections .photo-thumbs a img{display:block;width:100%;height:100%;object-fit:cover}
+#connections .photo-thumbs a:hover img{transform:scale(1.08)}
+#connections .photo-thumbs a img{transition:transform .3s}
+#connections .memories h3{margin:0 0 11px;font-size:15px;letter-spacing:-.02em}
+#connections .memory-card{padding:14px;border:1px solid var(--line);border-radius:15px;background:#fff;box-shadow:0 6px 18px rgba(23,33,51,.045);animation:memory-arrive .55s both}
+#connections .memory-card+.memory-card{margin-top:9px;animation-delay:.16s}
+@keyframes memory-arrive{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:none}}
+#connections .memory-card .author{display:flex;align-items:center;gap:8px;margin-bottom:8px;font-size:11px;font-weight:750}
+#connections .memory-card .initial{display:grid;place-items:center;width:23px;height:23px;border-radius:50%;background:#DCE6F0;color:var(--blue)}
+#connections .memory-card p{margin:0;color:#475565;font-size:12px;line-height:1.45}
+#connections .trip-note{margin:14px 0 0;color:#617083;font-size:11px;line-height:1.45}
+#connections .demo-pointer{position:absolute;z-index:10;left:0;top:0;width:28px;height:34px;opacity:0;pointer-events:none;filter:drop-shadow(1px 2px 2px rgba(23,33,51,.45))}
+#connections .demo-pointer[data-visible="true"]{opacity:1}
+#connections .demo-pointer svg{display:block;width:28px;height:34px;transform-origin:3px 2px}
+#connections .demo-pointer[data-press="true"] svg{animation:pointer-press .27s ease-out}
+@keyframes pointer-press{45%{transform:scale(.8)}to{transform:none}}
+#connections .showcase-caption{max-width:83ch;margin:20px 0 0;color:#4E5E70;font-size:12px;line-height:1.55}
+@media(max-width:980px){#connections .profile-demo{grid-template-columns:1fr}#connections .profile-sidebar{min-height:0;display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:13px}#connections .sidebar-label{grid-column:1/-1}#connections .sidebar-actions{align-self:center}#connections .sidebar-foot{display:none}#connections .profile-main{min-height:550px}}
+@media(max-width:650px){#connections .showcase-head{align-items:start}#connections .replay{font-size:11px;padding:8px 10px}#connections .profile-demo{padding:5px;border-radius:22px}#connections .profile-sidebar,#connections .profile-main{border-radius:17px}#connections .profile-sidebar{grid-template-columns:1fr;padding:16px}#connections .profile-sidebar .identity{display:flex;align-items:center;gap:12px}#connections .profile-sidebar h3{margin:0}#connections .profile-sidebar .identity p{display:none}#connections .avatar{width:47px;height:47px;border-radius:14px;font-size:19px}#connections .sidebar-actions{grid-template-columns:1fr}#connections .sidebar-actions button{padding:10px}#connections .main-bar{padding:14px 17px}#connections .profile-screen{padding:20px 16px;min-height:520px}#connections .friend-profile{grid-template-columns:1fr}#connections .friend-profile .photo-strip{display:none}#connections .trip-card{grid-template-columns:38% minmax(0,1fr);min-height:176px}#connections .trip-card-body{padding:15px}#connections .trip-card .trip-meta{display:block}#connections .trip-card .verified{margin-bottom:5px}#connections .trip-layout{grid-template-columns:1fr}#connections .photo-view{height:230px}#connections .memories{margin-top:5px}}
+@media(max-width:500px){#connections .demo-pointer{display:none}}
+#connections .connections-intro{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(280px,.9fr);align-items:end;gap:45px;margin-bottom:50px}
+#connections .connections-intro p{max-width:55ch;margin:0;color:#566578;font-size:15px;line-height:1.6}
+#connections .connections-intro .section-index{margin-bottom:28px;color:#243F64;font-size:12px}
+#connections .connections-intro .section-title{margin:0}
+#connections .showcase-head{margin-top:0}
+@media(max-width:800px){#connections .connections-intro{grid-template-columns:1fr;gap:22px}}
+@media(prefers-color-scheme:dark){#connections{background:#191F28;color:#F5F5F5}#connections .showcase-head .mono,#connections .connections-intro .section-index{color:#C5D8F0}#connections .connections-intro p,#connections .showcase-caption{color:#B8C2CE}}
+@media(prefers-reduced-motion:reduce){#connections .demo-pointer{display:none}}
 </style>
 <noscript>
 <style>
@@ -891,6 +998,9 @@ footer .wrap{align-items:center;gap:24px}
 .panel{position:static;opacity:1;margin-bottom:36px}
 .atlas{opacity:.45}
 .site-loader{display:none}
+#connections .profile-demo[data-scene] .profile-screen{display:none}
+#connections .profile-demo[data-scene] .screen-trip{display:block}
+#connections .replay,#connections .sidebar-actions,#connections .back{display:none}
 </style>
 </noscript>
 </head>
@@ -1119,7 +1229,7 @@ footer .wrap{align-items:center;gap:24px}
     <p class="eyebrow section-index">02 / Inside the app</p>
     <div class="app-demo-intro">
       <h2 class="section-title" id="app-demo-title">The Route Is Only<br>the Beginning.</h2>
-      <div class="app-demo-intro-aside"><p class="lede">Three parts of one sample plan, visible together. Open the route, inspect a source, and tap the connection we could not confirm.</p><div class="app-demo-actions"><button class="app-demo-replay" type="button" hidden>Replay the UI demo <span aria-hidden="true">&#8635;</span></button><a class="app-demo-connections-link" href="connections.html">Explore Connections concept</a></div></div>
+      <div class="app-demo-intro-aside"><p class="lede">Three parts of one sample plan, visible together. Open the route, inspect a source, and tap the connection we could not confirm.</p><div class="app-demo-actions"><button class="app-demo-replay" type="button" hidden>Replay the UI demo <span aria-hidden="true">&#8635;</span></button><a class="app-demo-connections-link" href="#connections">Explore Connections concept</a></div></div>
     </div>
     <div class="app-demo-showcase" data-playing="false">
       <article class="app-demo-window" data-open="false">
@@ -1279,10 +1389,53 @@ footer .wrap{align-items:center;gap:24px}
   </div>
 </section>
 
+<section class="connections-showcase light-section" id="connections" aria-labelledby="connections-title">
+    <div class="wrap">
+      <div class="connections-intro">
+        <div><p class="eyebrow section-index">05 / Connections concept</p><h2 class="section-title" id="connections-title">The Routes You Trust.<br>The Moments You Keep.</h2></div>
+        <p>Imagine opening a friend's profile to find the route they saved, photos, and the memories around it. This is a fictional concept. Today's app has a local profile and saved-trip verification, but no connected friends or photo sharing. Osaka is outside current Canada-only route coverage.</p>
+      </div>
+      <div class="showcase-head"><div><span class="mono">A fictional journey, shown in motion</span><h3 id="showcase-title">Open Maya's Osaka trip.</h3></div><button class="replay" type="button">Replay concept demo</button></div>
+      <div class="profile-demo" data-scene="connections" aria-label="Interactive Connections concept preview">
+        <aside class="profile-sidebar" aria-label="Sample personal profile">
+          <div class="sidebar-label mono"><span>Personal profile</span><span class="sample">Sample UI</span></div>
+          <div class="identity"><div class="avatar" aria-hidden="true">A</div><div><h3>Your profile</h3><p>A place for saved routes and the people you choose to share with.</p></div></div>
+          <div class="sidebar-actions"><button class="is-current" type="button" data-action="connections" aria-controls="connections-screen"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><circle cx="8" cy="9" r="3"></circle><circle cx="17" cy="10" r="2.5"></circle><path d="M2 20c0-4 2-6 6-6s6 2 6 6M14 16c3-1 7 0 8 4"></path></svg>Connections</button></div>
+          <div class="sidebar-foot"><b>What Verified means</b><p>Every route leg has a checked source. It never means a saved plan proves someone took the trip.</p></div>
+        </aside>
+        <div class="profile-main">
+          <div class="main-bar"><span class="mono">Laneway / Profile</span><span class="state">Concept preview</span></div>
+          <section class="profile-screen screen-connections" id="connections-screen" aria-labelledby="connections-heading">
+            <div class="screen-head"><div><span class="mono">Your circle</span><h2 id="connections-heading" tabindex="-1">Connections</h2><p>A sample of what shared journeys could feel like.</p></div></div>
+            <button class="connection-row" type="button" data-action="friend" aria-controls="friend-screen"><span class="friend-avatar" aria-hidden="true">M</span><span><strong>Maya</strong><small>Sample connection / Osaka trip</small><span class="verified"><svg viewBox="0 0 16 16" fill="none" aria-hidden="true"><circle cx="8" cy="8" r="7" fill="currentColor"></circle><path d="m4.5 8 2.3 2.3 4.7-4.8" stroke="#fff" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"></path></svg>Verified</span></span><span class="arrow" aria-hidden="true">&#8594;</span></button>
+            <p class="preview-explain">This profile and person are fictional. Connections are not available in the app today.</p>
+          </section>
+          <section class="profile-screen screen-friend" id="friend-screen" aria-labelledby="friend-heading">
+            <button class="back" type="button" data-action="connections">&#8592; Connections</button>
+            <div class="screen-head"><div><span class="mono">Connection profile / Sample</span><h2 id="friend-heading" tabindex="-1">Maya's journeys</h2><p>Routes, photos, and the people in between.</p></div></div>
+            <div class="friend-profile"><div class="name"><span class="friend-avatar" aria-hidden="true">M</span><div><h3>Maya</h3><p>Illustrative friend profile</p></div></div><div class="photo-strip" aria-hidden="true"><img src="assets/connections/Osaka%20Castle.jpg" alt=""><img src="assets/connections/Osaka%20Dinner.jpg" alt=""><img src="assets/connections/Osaka%20Canal.jpg" alt=""></div></div>
+            <button class="trip-card" type="button" data-action="trip" aria-controls="trip-screen"><img src="assets/connections/Osaka%20Canal.jpg" alt="Illustrative night view along an Osaka canal"><span class="trip-card-body"><span><span class="mono">Sample trip</span><strong>Osaka trip</strong></span><span class="trip-meta"><span class="verified"><svg viewBox="0 0 16 16" fill="none" aria-hidden="true"><circle cx="8" cy="8" r="7" fill="currentColor"></circle><path d="m4.5 8 2.3 2.3 4.7-4.8" stroke="#fff" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"></path></svg>Verified</span><span>Open trip &#8594;</span></span></span></button>
+          </section>
+          <section class="profile-screen screen-trip" id="trip-screen" aria-labelledby="trip-heading">
+            <button class="back" type="button" data-action="friend">&#8592; Maya's profile</button>
+            <div class="trip-head"><div><span class="mono">Maya / Sample journey</span><h2 id="trip-heading" tabindex="-1">Osaka trip</h2><span class="verified"><svg viewBox="0 0 16 16" fill="none" aria-hidden="true"><circle cx="8" cy="8" r="7" fill="currentColor"></circle><path d="m4.5 8 2.3 2.3 4.7-4.8" stroke="#fff" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"></path></svg>Verified</span></div><span class="meta">Illustrative route state</span></div>
+            <div class="trip-layout">
+              <div><div class="photo-view"><img id="selected-photo" src="assets/connections/Osaka%20Canal.jpg" alt="Illustrative evening scene along a canal in Osaka"><span class="photo-label" id="photo-label">Canal lights after dinner</span></div><div class="photo-thumbs" aria-label="Sample trip photos"><a href="assets/connections/Osaka%20Canal.jpg" data-photo-index="0" aria-current="true" aria-label="Show canal photo"><img src="assets/connections/Osaka%20Canal.jpg" alt="Canal lights at night"></a><a href="assets/connections/Osaka%20Castle.jpg" data-photo-index="1" aria-current="false" aria-label="Show castle photo"><img src="assets/connections/Osaka%20Castle.jpg" alt="Osaka Castle in daylight"></a><a href="assets/connections/Osaka%20Dinner.jpg" data-photo-index="2" aria-current="false" aria-label="Show dinner photo"><img src="assets/connections/Osaka%20Dinner.jpg" alt="Shared restaurant meal"></a></div></div>
+              <div class="memories"><h3>Memories from friends</h3><div class="memory-card"><div class="author"><span class="initial" aria-hidden="true">M</span>Maya / sample memory</div><p>"We followed the lights along the canal after dinner and kept walking just to see what was around the next corner."</p></div><div class="memory-card"><div class="author"><span class="initial" aria-hidden="true">R</span>Ren / sample memory</div><p>"One more skewer turned into a whole extra hour at the table."</p></div></div>
+            </div>
+            <p class="trip-note">The Verified badge is a fictional example of a route whose every leg has source evidence. It does not verify a visit, these photos, or these memories.</p>
+          </section>
+        </div>
+        <div class="demo-pointer" aria-hidden="true"><svg viewBox="0 0 28 34" focusable="false"><path d="M3 2v25l6.4-6.4 5.3 11.4 4.3-2-5.4-11.2h9.4Z" fill="#fff" stroke="#172133" stroke-width="2" stroke-linejoin="round"></path></svg></div>
+      </div>
+      <p class="showcase-caption">Illustrative concept only. Maya, Ren, the Osaka trip, its Verified state, the photos, and the memories are fictional. The photographs were generated for this preview. Laneway currently plans in Canada; Connections, shared photos, and friend memories have not shipped.</p>
+    </div>
+  </section>
+
 <section id="activity" class="light-section">
   <div class="wrap">
     <div class="activity-head">
-      <div><p class="eyebrow section-index">05 / In motion</p>
+      <div><p class="eyebrow section-index">06 / In motion</p>
       <h2>One Journey.<br>Many Ways to Move.</h2></div>
       <p class="activity-note"><b>Simulated activity.</b> Generated route examples, never customer telemetry.</p>
     </div>
@@ -1297,7 +1450,7 @@ footer .wrap{align-items:center;gap:24px}
 
 <section id="status" class="light-section">
   <div class="wrap">
-    <p class="eyebrow section-index">06 / Building in the open</p>
+    <p class="eyebrow section-index">07 / Building in the open</p>
     <h2 class="section-title">Real Progress.<br>Honest Limits.</h2>
     <div class="cols">
       <div>
@@ -2407,5 +2560,151 @@ if (locked()) {
 }());
 </script>
 
+<script>
+(function () {
+  "use strict";
+  var stage = document.querySelector("#connections .profile-demo");
+  var replay = document.querySelector("#connections .replay");
+  var pointer = stage.querySelector(".demo-pointer");
+  var photo = document.getElementById("selected-photo");
+  var photoLabel = document.getElementById("photo-label");
+  var photoView = stage.querySelector(".photo-view");
+  var reduced = window.matchMedia("(prefers-reduced-motion: reduce)");
+  var images = [
+    { src:"assets/connections/Osaka%20Canal.jpg", alt:"Illustrative evening scene along a canal in Osaka", label:"Canal lights after dinner" },
+    { src:"assets/connections/Osaka%20Castle.jpg", alt:"Illustrative daylight view of Osaka Castle", label:"A slow afternoon by the castle" },
+    { src:"assets/connections/Osaka%20Dinner.jpg", alt:"Illustrative shared restaurant meal in Osaka", label:"One more skewer together" }
+  ];
+  var currentPhoto = 0;
+  var token = 0;
+  var guided = false;
+  var playedOnce = false;
+  var visible = false;
+  var pointerPosition = null;
+
+  function setScene(scene, focus) {
+    stage.dataset.scene = scene;
+    stage.querySelector("[data-action='connections']").classList.toggle("is-current", scene === "connections");
+    if (focus) {
+      var heading = stage.querySelector(".screen-" + scene + " h2");
+      if (heading) heading.focus({ preventScroll:true });
+    }
+  }
+
+  function selectPhoto(index) {
+    if (!Number.isInteger(index) || index < 0 || index >= images.length) return;
+    currentPhoto = index;
+    var item = images[index];
+    photoView.classList.add("is-changing");
+    photo.src = item.src;
+    photo.alt = item.alt;
+    photoLabel.textContent = item.label;
+    stage.querySelectorAll("[data-photo-index]").forEach(function (link) {
+      link.setAttribute("aria-current", String(Number(link.dataset.photoIndex) === index));
+    });
+    setTimeout(function () { photoView.classList.remove("is-changing"); }, reduced.matches ? 0 : 220);
+  }
+
+  function stop() {
+    token++;
+    stage.dataset.playing = "false";
+    pointer.dataset.visible = "false";
+    pointerPosition = null;
+  }
+
+  stage.addEventListener("click", function (event) {
+    var target = event.target.closest("[data-action], [data-photo-index]");
+    if (!target || !stage.contains(target)) return;
+    if (target.hasAttribute("data-photo-index")) event.preventDefault();
+    if (!guided) stop();
+    if (target.hasAttribute("data-photo-index")) selectPhoto(Number(target.dataset.photoIndex));
+    else setScene(target.dataset.action, !guided);
+  });
+
+  function pause(ms) { return new Promise(function (resolve) { setTimeout(resolve, ms); }); }
+
+  async function pointTo(target, activeToken) {
+    if (reduced.matches || window.innerWidth <= 500) return;
+    var outer = stage.getBoundingClientRect();
+    var rect = target.getBoundingClientRect();
+    var end = { x:rect.left - outer.left + rect.width / 2, y:rect.top - outer.top + rect.height / 2 };
+    var start = pointerPosition || { x:end.x - 85, y:end.y + 75 };
+    pointer.dataset.visible = "true";
+    var mid = { x:(start.x + end.x) / 2 + 22, y:(start.y + end.y) / 2 - 25 };
+    if (pointer.animate) {
+      var motion = pointer.animate([
+        { left:start.x + "px", top:start.y + "px", opacity:pointerPosition ? 1 : 0 },
+        { left:mid.x + "px", top:mid.y + "px", opacity:1, offset:.52 },
+        { left:end.x + "px", top:end.y + "px", opacity:1 }
+      ], { duration:760, easing:"cubic-bezier(.25,.75,.2,1)" });
+      try { await motion.finished; } catch (_) { return; }
+    }
+    if (activeToken !== token) return;
+    pointer.style.left = end.x + "px";
+    pointer.style.top = end.y + "px";
+    pointerPosition = end;
+  }
+
+  async function play() {
+    stop();
+    if (reduced.matches || document.hidden) return;
+    var activeToken = token;
+    playedOnce = true;
+    stage.dataset.playing = "true";
+    selectPhoto(0);
+    setScene("connections", false);
+    var steps = [
+      { selector:"[data-action='connections']", wait:500 },
+      { selector:".connection-row", wait:650 },
+      { selector:".trip-card", wait:800 },
+      { selector:"[data-photo-index='1']", wait:1000 },
+      { selector:"[data-photo-index='2']", wait:1000 }
+    ];
+    for (var i = 0; i < steps.length; i++) {
+      await pause(steps[i].wait);
+      if (activeToken !== token || document.hidden || !visible) break;
+      var target = stage.querySelector(steps[i].selector);
+      if (!target) break;
+      await pointTo(target, activeToken);
+      if (activeToken !== token) break;
+      pointer.dataset.press = "true";
+      guided = true;
+      target.click();
+      guided = false;
+      await pause(220);
+      pointer.dataset.press = "false";
+      if (activeToken !== token) break;
+    }
+    if (activeToken === token) {
+      stage.dataset.playing = "false";
+      pointer.dataset.visible = "false";
+    }
+  }
+
+  replay.addEventListener("click", function () {
+    stage.scrollIntoView({ behavior:reduced.matches ? "auto" : "smooth", block:"start" });
+    visible = true;
+    if (reduced.matches) { stop(); selectPhoto(0); setScene("connections", true); }
+    else play();
+  });
+  document.addEventListener("visibilitychange", function () {
+    if (document.hidden) stop();
+    else if (visible && !playedOnce && !reduced.matches) play();
+  });
+  reduced.addEventListener("change", function () {
+    stop();
+    if (reduced.matches) setScene("trip", false);
+    else if (visible && !playedOnce) play();
+  });
+  if ("IntersectionObserver" in window) {
+    new IntersectionObserver(function (entries) {
+      visible = entries[0].isIntersecting;
+      if (!visible) stop();
+      else if (!playedOnce && !reduced.matches) play();
+    }, { threshold:.2 }).observe(stage);
+  } else { visible = true; if (!reduced.matches) play(); }
+  if (reduced.matches) setScene("trip", false);
+}());
+</script>
 </body>
 </html>
