@@ -2,7 +2,7 @@
 
 ### Emilio's Work
 
-*Time worked: 12h 31m by clock checks (11:26 AM to 11:57 PM, the first clock check after the latest prompt). This span includes unmeasured interruptions and is not an active-work estimate.*
+*Time worked: 12h 45m by clock checks (11:26 AM Friday Oct 9 to 12:11 AM Saturday Oct 10, the first clock check after the latest prompt). This span includes unmeasured interruptions and is not an active-work estimate.*
 
 ## Timeline
 
@@ -230,6 +230,32 @@ commented on #155 with the implementation and checks. Both PRs were
 mergeable and the product journal's engine checks passed. The preview
 remains at `http://localhost:8076/#how-it-works`; the public site has not
 changed. Issue #155 remains open for publication and live verification.
+
+**12:11 AM Saturday Oct 10 - Emilio requested a Mac cursor.**
+The orange touch dot did not make the automatic walkthrough look like a
+person using the app. Checked #155, its comments, and both open PRs;
+pulled both branches and commented on the issue before editing.
+
+**12:14 AM Saturday Oct 10 - A pointer now drives the UI.**
+Replaced the dot with a white, dark-outlined Mac-style SVG arrow. Its tip
+lands at the actual center of each control. Web Animations moves it
+between controls along a gentle curved path with eased timing; an opacity
+and position fallback remains for older browsers. The pointer compresses
+briefly and shows a small ring when the corresponding UI action fires.
+After exposing both evidence sheets, it moves to each Done button and
+closes them before replaying, instead of disappearing over an open sheet.
+It never intercepts visitor clicks. On narrow screens the guided pointer
+is hidden while all manual controls remain available; reduced-motion
+visitors receive no automatic sequence.
+
+At 1440px the browser showed the arrow over the route, evidence, and
+unsupported windows, including its press at the train Done button. Both
+sheets closed during the automatic sequence. Clicking the route button
+stopped autoplay and hid the pointer while opening the sheet for manual
+use. At 390px the pointer is hidden and the page width stays 390px.
+Browser logs showed no warnings or errors. Inline scripts parse; IDs,
+control references, fragment targets, local assets, and whitespace checks
+pass. No Swift or engine code changed, so no routing benchmark ran.
 
 ---
 
