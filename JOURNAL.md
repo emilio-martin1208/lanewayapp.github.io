@@ -2,7 +2,7 @@
 
 ### Emilio's Work
 
-*Time worked: 11h 33m by clock checks (11:26 AM to 10:59 PM). This span includes unmeasured interruptions and is not an active-work estimate.*
+*Time worked: 12h 6m by clock checks (11:26 AM to 11:32 PM). This span includes unmeasured interruptions and is not an active-work estimate.*
 
 ## Timeline
 
@@ -105,6 +105,38 @@ the browser logged no warnings or errors. Removed the older hero claim that
 three legs were sourced, since the captured sample explicitly shows only
 one of three legs verified. The hero now says each leg shows its status.
 Public deployment remains unverified and #155 stays open.
+
+**11:19 PM - Emilio asked for interactive UI rather than moving screenshots.**
+The three windows still displayed captured images. Emilio wanted controls
+that visitors can use, with animated responses from the app interface.
+Checked #155 and its comments, pulled both branches, and commented on the
+new direction before editing. Read `PlanView.swift`, `ContentView.swift`,
+and the backend's canned demo plan to match the native route sheet, selected
+leg, evidence sheet, and unsupported-claim states.
+
+**11:32 PM - The windows became interactive app recreations.**
+Replaced the screenshots in `index.html` with code-native UI. The plan
+window opens a route sheet with a leg timeline; selecting a leg collapses
+the sheet and highlights that segment on a schematic map. The train window
+opens and closes a verified claim sheet with its quote, source link, and
+illustrative fetch timestamp. The shuttle window selects the unverified leg
+and opens the unsupported claim and source failure. Sheet transitions and
+route drawing run while the showcase is visible; the existing reduced-motion
+rule removes animations while keeping all controls usable. Keyboard Escape
+closes the evidence sheets and returns focus to the trigger. Removed four
+unused simulator JPEGs. The browser cannot execute native SwiftUI, so these
+are interactive recreations of its current behavior, clearly identified as
+such on the page. No routing request or live verification was made.
+
+**11:32 PM - Interaction and layout checks.**
+In the local browser, opened the route sheet, selected the train, and saw
+the map highlight and sheet collapse. Opened and closed the train evidence;
+selected the shuttle and opened its unsupported claim; checked Escape and
+focus return. Three windows fit together at 1440px; they stack at 390px
+without horizontal overflow, and the shuttle sheet remains readable there.
+The browser reported no errors. All seven inline scripts parse; HTML IDs
+are unique, all three `aria-controls` targets exist, and `git diff --check`
+passes. Public deployment remains unverified and #155 stays open.
 
 ---
 
