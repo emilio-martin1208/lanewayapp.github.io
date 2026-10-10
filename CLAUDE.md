@@ -5,9 +5,10 @@
 The public face of Laneway: a landing page and an engineering dev log, served by
 GitHub Pages at <https://lanewayapp.github.io/>.
 
-Three pages, all self-contained:
+Pages are self-contained:
 
 - `index.html` - what Laneway is, the anchor case, how verification works, honest status
+- `connections.html` - an explicitly illustrative profile and Connections concept, not a released social feature
 - `status.html` - the shape of the work, drawn from the engine repo's history
 - `devlog.html` - what got built, what broke, what was decided. Newest entry first.
 - `legal.html` - terms of service, privacy policy, and EULA, all three on one page

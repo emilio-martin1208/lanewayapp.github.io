@@ -1,3 +1,52 @@
+# Connections Profile Concept - Saturday Oct 10
+
+### Emilio's Work
+
+*Time worked: one prompt at the 11:08 AM clock check. The latest clock check was 12:00 PM, a 52m elapsed work span rather than a prompt-to-prompt interval.*
+
+## Timeline
+
+**11:08 AM - A Connections profile showcase was requested.**
+Emilio asked for a personal profile showcase page where Connections shows
+a Verified badge on an "Osaka trip" with photos and memories from friends.
+Read both journals, checked both issue trackers and website PR #11, and
+pulled the website and product journal review branches before editing.
+The shipped iOS profile and travel log show saved route verification, but
+Friends and Followers are not connected. Osaka is outside the app's
+Canada-only v1 coverage. Opened product issue #158 to track a clearly
+labelled concept instead of claiming those features exist today.
+
+**12:00 PM - The interactive concept page was built and reviewed.**
+Added `connections.html` and linked it from the landing page's app demo
+section without changing its three-link primary navigation. The new page
+shows a sample personal profile, a Connections list with a Verified badge
+on Maya's Osaka trip, Maya's sample profile, and an openable trip with
+three generated Osaka photos and two fictional friend memories. A
+replayable Mac-style cursor moves through the actual controls and cycles
+the photos. Visitors can click through themselves; a manual action stops
+playback, and playback stops offscreen or in a hidden tab. Reduced-motion
+visitors get manual controls without autoplay. Without JavaScript, the
+trip details and photos remain visible. The generated images were resized
+and committed locally as web assets; no external request is needed.
+
+The hero, profile UI, trip badge, and closing note identify the scene as
+illustrative and state that Connections, shared media, and an Osaka route
+are not available in the current app. The Verified badge describes a
+fictional state where every route leg has source evidence; it does not
+attest that anyone took the trip or that the photos and memories are real.
+
+Reviewed the page at 1440px, the default 625px browser pane, and 390px.
+The three photo assets loaded, manual profile and photo controls worked,
+the cursor guided the sequence at 625px, and the phone had no horizontal
+overflow. The browser reported no warnings or errors. The default browser
+theme displayed the dark outer page with a light product surface. HTML
+references, local paths, alt attributes, script parsing, ASCII, and
+whitespace checks pass. No product or engine code changed, so no routing
+benchmark ran. Website PR #11 and product journal PR #157 are the review
+path; issue #158 stays open until publication and a live check.
+
+---
+
 # Show the Native App on the Landing Page - Friday Oct 9
 
 ### Emilio's Work

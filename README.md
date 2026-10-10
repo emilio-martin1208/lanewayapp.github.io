@@ -8,6 +8,7 @@ Live at <https://lanewayapp.github.io/>.
 ## Layout
 
 - `index.html` - the landing page
+- `connections.html` - an interactive, explicitly illustrative Connections profile concept
 - `devlog.md` - the engineering log, newest entry first. **Edit this one.**
 - `devlog.html` - the page that reads `devlog.md` and renders it. Chrome only.
 - `CLAUDE.md` - working context, read it before touching anything
@@ -24,10 +25,10 @@ There is no build step. Open `index.html` in a browser, or serve the folder:
 python3 -m http.server 8076
 ```
 
-Styles are inline, there are no fonts to fetch and no third-party requests of
-any kind. `index.html` has no scripts at all and renders with no network.
-`devlog.html` carries one script, its own markdown renderer, and reads
-`devlog.md` from this same folder.
+Styles and interaction scripts are inline. Fonts and the Connections sample
+photos are served from this repo; there are no third-party runtime requests.
+`index.html` and `connections.html` render without a build step or external
+network access. `devlog.html` reads `devlog.md` from this same folder.
 
 ## Editing the dev log
 

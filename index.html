@@ -290,6 +290,11 @@ section{padding:clamp(64px,9vw,132px) 0}
 .app-demo-replay[hidden]{display:none}
 .app-demo-replay:hover{background:#fff;border-color:#243F64}
 .app-demo-replay:focus-visible{outline:3px solid #243F64;outline-offset:3px}
+.app-demo-actions{display:flex;flex-wrap:wrap;align-items:center;gap:8px;margin-top:16px}
+.app-demo-actions .app-demo-replay{margin-top:0}
+.app-demo-connections-link{display:inline-flex;align-items:center;padding:8px 13px;border:1px solid #243F64;border-radius:999px;background:#243F64;color:#fff;font:600 12px "Geist",sans-serif;text-decoration:none}
+.app-demo-connections-link:hover{background:#172133;border-color:#172133}
+.app-demo-connections-link:focus-visible{outline:3px solid #243F64;outline-offset:3px}
 .app-demo-showcase{position:relative;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:25px;align-items:start;margin-top:48px;perspective:1400px}
 .app-demo-showcase::before{content:"";position:absolute;inset:16% -6% 14%;z-index:-1;border-radius:50%;background:radial-gradient(ellipse,rgba(36,63,100,.13) 0%,rgba(36,63,100,0) 67%);pointer-events:none}
 .app-demo-guide{position:absolute;z-index:8;left:-100px;top:-100px;width:28px;height:34px;pointer-events:none;opacity:0;transition:opacity .25s}
@@ -1114,7 +1119,7 @@ footer .wrap{align-items:center;gap:24px}
     <p class="eyebrow section-index">02 / Inside the app</p>
     <div class="app-demo-intro">
       <h2 class="section-title" id="app-demo-title">The Route Is Only<br>the Beginning.</h2>
-      <div class="app-demo-intro-aside"><p class="lede">Three parts of one sample plan, visible together. Open the route, inspect a source, and tap the connection we could not confirm.</p><button class="app-demo-replay" type="button" hidden>Replay the UI demo <span aria-hidden="true">&#8635;</span></button></div>
+      <div class="app-demo-intro-aside"><p class="lede">Three parts of one sample plan, visible together. Open the route, inspect a source, and tap the connection we could not confirm.</p><div class="app-demo-actions"><button class="app-demo-replay" type="button" hidden>Replay the UI demo <span aria-hidden="true">&#8635;</span></button><a class="app-demo-connections-link" href="connections.html">Explore Connections concept</a></div></div>
     </div>
     <div class="app-demo-showcase" data-playing="false">
       <article class="app-demo-window" data-open="false">
