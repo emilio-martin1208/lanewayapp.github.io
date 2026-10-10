@@ -264,6 +264,17 @@ Pushed website commit `fe53f86` to PR #11 and product journal commit
 product journal's engine checks passed. The preview remains local;
 #155 stays open until publication and live verification.
 
+**12:19 AM Saturday Oct 10 - The app browser viewport was corrected.**
+The default in-app browser is 625px wide. The first cursor revision hid
+the pointer below 900px, so Emilio's own preview would not have shown
+the requested change. Moved that cutoff to 500px, leaving the pointer
+visible in the app browser while still hiding it on a phone. Replay at
+625px now scrolls the first window into view, letting the pointer start
+over the map and move to the route control in the visible area. Browser
+checks confirmed the pointer and route UI at 625px with no horizontal
+overflow. At 390px the pointer remains hidden and the page still fits.
+Inline scripts, HTML references, and whitespace checks pass again.
+
 ---
 
 # The Elastic Is Gone - Tuesday Sep 15
