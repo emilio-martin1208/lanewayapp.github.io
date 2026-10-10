@@ -1,3 +1,33 @@
+# Guide Visitors Into the Connections Preview - Saturday Oct 10
+
+### Emilio's Work
+
+*Time worked: one prompt at the 12:43 PM clock check. The latest clock check was 12:46 PM, a 3m elapsed work span since that check.*
+
+## Timeline
+
+**12:43 PM - Emilio asked for an explicit interaction cue.**
+He wanted visitors to know they can click a user in the Connections concept
+to see the profile preview. Read both journals, checked the tracker and #158
+comments, pulled both review branches, and recorded the request on #158
+before editing.
+
+**12:46 PM - The prompt is visible in and above the demo.**
+Replaced the vague line under the Connections heading with "Click or tap
+Maya to preview her profile and Osaka trip." Added a persistent guide above
+the UI: "Try it yourself: click or tap Connections, then Maya..." The
+outside guide stays visible after the automatic walkthrough changes screens.
+The guide uses the existing navy and cool-grey palette, with a light text
+override for the dark outer section.
+
+The local browser showed the guide at 625px and 390px. Both widths had no
+horizontal overflow; the 390px text wrapped cleanly. The new copy appeared
+in the DOM, and `git diff --check` passed. No engine code changed, so no
+routing benchmark ran. Website PR #11 and journal PR #157 remain in review;
+#158 stays open until publication and a live check.
+
+---
+
 # Remove the Landing Page Pipeline - Saturday Oct 10
 
 ### Emilio's Work
