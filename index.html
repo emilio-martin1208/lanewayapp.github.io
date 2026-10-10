@@ -282,23 +282,43 @@ section{padding:clamp(64px,9vw,132px) 0}
 /* Interactive recreations of the route sheet and evidence views in PlanView.swift.
    The map is schematic; the copy comes from the app's canned demo plan. */
 .app-demo-intro{display:flex;align-items:end;justify-content:space-between;gap:30px}
+.app-demo.light-section{position:relative;overflow:hidden;background:radial-gradient(ellipse 55% 38% at 6% 55%,#D5E5F6 0%,transparent 100%),radial-gradient(ellipse 45% 40% at 96% 38%,#FBE6CA 0%,transparent 100%),#F4F7FB}
+.app-demo .wrap{position:relative;z-index:1}
+.app-demo-intro-aside{max-width:39ch}
 .app-demo-intro .lede{max-width:39ch;margin:0}
-.app-demo-showcase{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px;margin-top:42px}
-.app-demo-window{display:flex;flex-direction:column;min-width:0;overflow:hidden;border:1px solid #2F3C51;border-radius:22px;background:#172133;color:#fff;box-shadow:0 20px 45px rgba(23,33,51,.12)}
-.app-demo-window-bar{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:16px 20px;border-bottom:1px solid rgba(255,255,255,.14);color:#C4D0DF;font:500 10px "Geist Mono",ui-monospace,Menlo,monospace;letter-spacing:.09em;text-transform:uppercase}
-.app-demo-window-bar .number{color:#EEB35B}
-.app-demo-window-bar .try{color:#EEB35B}
-.app-demo-window-copy{flex:1;min-height:171px;padding:22px 22px 24px}
-.app-demo-window-copy h3{margin:0 0 10px;font-size:clamp(25px,2.2vw,34px);font-weight:500;line-height:1.13;letter-spacing:-.045em}
-.app-demo-window-copy p{max-width:33ch;margin:0;color:#C8D0DD;font-size:14px;line-height:1.55}
-.app-ui{position:relative;height:560px;margin:0 10px 10px;overflow:hidden;isolation:isolate;border-radius:13px;background:#F8F5EF;color:#202A36;font:13px/1.4 -apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}
+.app-demo-replay{display:inline-flex;align-items:center;gap:8px;margin-top:16px;padding:8px 13px;border:1px solid #B7C4D4;border-radius:999px;background:rgba(255,255,255,.72);color:#243F64;font:600 12px "Geist",sans-serif;cursor:pointer}
+.app-demo-replay[hidden]{display:none}
+.app-demo-replay:hover{background:#fff;border-color:#243F64}
+.app-demo-replay:focus-visible{outline:3px solid #243F64;outline-offset:3px}
+.app-demo-showcase{position:relative;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:25px;align-items:start;margin-top:48px;perspective:1400px}
+.app-demo-showcase::before{content:"";position:absolute;inset:16% -6% 14%;z-index:-1;border-radius:50%;background:radial-gradient(ellipse,#D9E8F6 0%,rgba(217,232,246,0) 67%);pointer-events:none}
+.app-demo-window{--depth:0px;--tilt:2deg;display:flex;flex-direction:column;min-width:0;color:#172133;transform:translateY(var(--depth)) rotateY(var(--tilt));transition:transform .6s cubic-bezier(.2,.8,.2,1)}
+.app-demo-window:nth-child(2){--depth:22px;--tilt:0deg}
+.app-demo-window:nth-child(3){--depth:44px;--tilt:-2deg}
+.app-demo-window:hover,.app-demo-window:focus-within{transform:translateY(var(--depth)) rotateY(0deg) scale(1.012)}
+.app-demo-window-bar{display:flex;align-items:center;justify-content:space-between;gap:12px;min-height:34px;margin-bottom:12px;padding:0 3px;color:#536278;font:600 10px "Geist Mono",ui-monospace,Menlo,monospace;letter-spacing:.08em;text-transform:uppercase}
+.app-demo-window-bar .number{color:#B16E18}
+.app-demo-window-bar .try{padding:4px 8px;border:1px solid #B7C4D4;border-radius:999px;color:#465D78;font-size:9px}
+.app-demo-window-copy{order:2;min-height:0;padding:18px 5px 0}
+.app-demo-window-copy h3{margin:0 0 6px;font-size:clamp(22px,2vw,29px);font-weight:550;line-height:1.16;letter-spacing:-.04em}
+.app-demo-window-copy p{max-width:33ch;margin:0;color:#546172;font-size:13px;line-height:1.5}
+.app-demo-showcase[data-playing="true"] .app-ui{animation:app-demo-arrive .85s cubic-bezier(.2,.8,.2,1) both}
+.app-demo-showcase[data-playing="true"] .app-demo-window:nth-child(2) .app-ui{animation-delay:.14s}
+.app-demo-showcase[data-playing="true"] .app-demo-window:nth-child(3) .app-ui{animation-delay:.28s}
+@keyframes app-demo-arrive{from{opacity:.4;transform:translateY(32px) scale(.96)}to{opacity:1;transform:none}}
+.app-ui{order:1;position:relative;height:560px;margin:0;overflow:hidden;isolation:isolate;border:7px solid #172133;border-radius:30px;background:#F8F5EF;color:#202A36;box-shadow:0 26px 42px rgba(23,33,51,.22),0 5px 12px rgba(23,33,51,.14);font:13px/1.4 -apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}
+.app-demo-window:nth-child(2) .app-ui{box-shadow:0 28px 48px rgba(46,85,132,.24),0 5px 12px rgba(23,33,51,.14)}
+.app-demo-window:nth-child(3) .app-ui{box-shadow:0 28px 48px rgba(154,102,44,.22),0 5px 12px rgba(23,33,51,.14)}
 .app-ui button{font:inherit;cursor:pointer}
 .app-ui button:focus-visible{outline:3px solid #274B7A;outline-offset:2px}
 .app-ui-chip{display:inline-block;padding:4px 9px;border-radius:999px;background:#E7E8E7;color:#667080;font-size:11px;font-weight:650;white-space:nowrap}
 .app-ui-chip.verified{background:#D9EFE2;color:#1E8751}
 .app-ui-chip.unverified{background:#FAEDD6;color:#BB7718}
 .app-ui-map{position:absolute;inset:0;background:#E6EEE9}
-.app-ui-map svg{display:block;width:100%;height:100%}
+.app-ui-map svg{display:block;width:100%;height:100%;transition:transform .8s cubic-bezier(.2,.8,.2,1)}
+.app-ui-plan[data-leg="walk"] .app-ui-map svg{transform:scale(1.28) translate(10%,16%)}
+.app-ui-plan[data-leg="train"] .app-ui-map svg{transform:scale(1.28) translate(0,0)}
+.app-ui-plan[data-leg="shuttle"] .app-ui-map svg{transform:scale(1.28) translate(-8%,-15%)}
 .app-ui-map .road{fill:none;stroke:#C9D3CD;stroke-width:7;stroke-linecap:round}
 .app-ui-map .road.minor{stroke:#F8F7F2;stroke-width:5}
 .app-ui-map .map-water{fill:#D7E9F1}
@@ -306,10 +326,16 @@ section{padding:clamp(64px,9vw,132px) 0}
 .app-ui-map .demo-route{fill:none;stroke:#E89E2E;stroke-width:5;stroke-linecap:round;stroke-linejoin:round;transition:stroke-width .4s,opacity .4s}
 .app-ui-map .demo-route.unknown{stroke-dasharray:8 7}
 .app-demo-showcase[data-playing="true"] .app-ui-map .demo-route.known{animation:app-demo-route-draw 1.5s ease-out both}
+.app-ui-map .route-tracer{fill:none;stroke:#FFF4D8;stroke-width:7;stroke-linecap:round;stroke-dasharray:.07 .93;opacity:0}
+.app-demo-showcase[data-playing="true"] .app-ui-map .route-tracer{opacity:.95;animation:app-demo-route-trace 2.4s linear 1.5s infinite}
+.app-ui-plan[data-leg="walk"] .route-tracer,.app-ui-plan[data-leg="shuttle"] .route-tracer{opacity:0!important}
 .app-ui-plan[data-leg]:not([data-leg="none"]) .demo-route{opacity:.26}
 .app-ui-plan[data-leg="walk"] .demo-route.walk,.app-ui-plan[data-leg="train"] .demo-route.train,.app-ui-plan[data-leg="shuttle"] .demo-route.shuttle{opacity:1;stroke-width:8}
 @keyframes app-demo-route-draw{from{stroke-dasharray:1;stroke-dashoffset:1}to{stroke-dasharray:1;stroke-dashoffset:0}}
+@keyframes app-demo-route-trace{from{stroke-dashoffset:1}to{stroke-dashoffset:0}}
 .app-ui-map .map-node{fill:#fff;stroke:#E89E2E;stroke-width:4}
+.app-ui-plan[data-leg="walk"] .map-node:nth-of-type(1),.app-ui-plan[data-leg="train"] .map-node:nth-of-type(2),.app-ui-plan[data-leg="shuttle"] .map-node:nth-of-type(3){animation:app-demo-map-ping 1.4s ease-out 2}
+@keyframes app-demo-map-ping{50%{stroke-width:10;opacity:.55}}
 .app-ui-map .map-label{fill:#43535C;font:700 10px -apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;letter-spacing:.05em}
 .app-ui-map-note{position:absolute;top:20px;left:18px;padding:7px 10px;border-radius:999px;background:rgba(255,255,255,.92);color:#52616E;font-size:10px;font-weight:700;letter-spacing:.09em;text-transform:uppercase}
 .app-ui-map-focus{position:absolute;top:60px;left:18px;max-width:calc(100% - 36px);padding:9px 12px;border-radius:12px;background:#fff;color:#354152;font-size:12px;font-weight:700;box-shadow:0 5px 18px rgba(36,42,50,.12);opacity:0;transform:translateY(7px);transition:opacity .35s,transform .35s;pointer-events:none}
@@ -353,8 +379,13 @@ section{padding:clamp(64px,9vw,132px) 0}
 .app-ui-shuttle-select{display:block;width:100%;padding:0;border:0;background:none;text-align:left;color:inherit}
 .app-ui-shuttle-card{transition:border-color .25s,box-shadow .25s,transform .25s}
 .app-ui-shuttle-card:has(.app-ui-shuttle-select[aria-pressed="true"]){border-color:#E89E2E;box-shadow:0 0 0 2px rgba(232,158,46,.27);transform:translateY(-3px)}
+.app-ui-shuttle-card:has(.app-ui-shuttle-select[aria-pressed="true"]){animation:app-demo-unknown-pulse 1.4s ease-out 2}
+@keyframes app-demo-unknown-pulse{50%{box-shadow:0 0 0 10px rgba(232,158,46,0)}}
 .app-ui-detail-sheet{position:absolute;z-index:3;inset:0;overflow:auto;background:#F8F5EF;visibility:hidden;transform:translateY(101%);transition:transform .55s cubic-bezier(.2,.8,.2,1),visibility 0s .55s;overscroll-behavior:contain}
 .app-demo-window[data-open="true"] .app-ui-detail-sheet{visibility:visible;transform:none;transition:transform .55s cubic-bezier(.2,.8,.2,1),visibility 0s}
+.app-demo-window[data-open="true"] .app-ui-detail-card{animation:app-demo-detail-reveal .55s cubic-bezier(.2,.8,.2,1) both}
+.app-demo-window[data-open="true"] .app-ui-detail-card:nth-child(2){animation-delay:.16s}
+@keyframes app-demo-detail-reveal{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:none}}
 .app-ui-detail-head{position:sticky;top:0;z-index:1;display:flex;align-items:center;justify-content:space-between;padding:18px 15px;border-bottom:1px solid #E2E1DA;background:#F8F5EF}
 .app-ui-detail-head strong{font-size:17px}
 .app-ui-detail-head button{padding:7px 13px;border:0;border-radius:999px;background:#fff;font-weight:700}
@@ -368,15 +399,16 @@ section{padding:clamp(64px,9vw,132px) 0}
 .app-ui-detail-card .source{display:block;margin-top:9px;color:#69727F;font-size:11px}
 .app-ui-detail-card .source a{color:#425E84;text-decoration:underline}
 .app-ui-detail-card .reason{margin-top:11px;color:#9A661C;font-size:12px}
-.app-demo-caption{margin:15px 0 0;color:var(--muted);font-size:12px;line-height:1.55}
+.app-demo-caption{max-width:82ch;margin:75px 0 0;color:#58677A;font-size:12px;line-height:1.55}
 @media (max-width:900px){
   .app-demo-intro{display:block}.app-demo-intro .lede{margin-top:20px}
   .app-demo-showcase{grid-template-columns:repeat(2,minmax(0,1fr))}
-  .app-demo-window-copy{min-height:155px}
+  .app-demo-window{--depth:0px!important;--tilt:0deg!important}
+  .app-demo-caption{margin-top:28px}
 }
 @media (max-width:650px){
   .app-demo-showcase{grid-template-columns:1fr;gap:16px;margin-top:28px}
-  .app-demo-window-copy{min-height:0}
+  .app-demo-window{margin-bottom:18px}
   .app-ui{height:520px}
 }
 
@@ -1062,13 +1094,13 @@ footer .wrap{align-items:center;gap:24px}
     <p class="eyebrow section-index">02 / Inside the app</p>
     <div class="app-demo-intro">
       <h2 class="section-title" id="app-demo-title">The Route Is Only<br>the Beginning.</h2>
-      <p class="lede">Three parts of one sample plan, visible together. Open the route, inspect a source, and tap the connection we could not confirm.</p>
+      <div class="app-demo-intro-aside"><p class="lede">Three parts of one sample plan, visible together. Open the route, inspect a source, and tap the connection we could not confirm.</p><button class="app-demo-replay" type="button" hidden>Replay the UI demo <span aria-hidden="true">&#8635;</span></button></div>
     </div>
     <div class="app-demo-showcase" data-playing="false">
       <article class="app-demo-window" data-open="false">
         <div class="app-demo-window-bar"><span><span class="number">01</span> / The plan</span><span class="try">Try it</span></div>
         <div class="app-demo-window-copy">
-          <h3>One route.<br>Every leg.</h3>
+          <h3>One route. Every leg.</h3>
           <p>Tap the trip bar to open the timeline. Select a leg to focus it.</p>
         </div>
         <div class="app-ui app-ui-plan" data-leg="none">
@@ -1080,6 +1112,7 @@ footer .wrap{align-items:center;gap:24px}
               <path class="road minor" d="M-30 223 C111 256 245 202 390 226 M-20 464 C105 432 253 482 394 420 M172 -20 C154 130 191 290 172 592 M328 -20 C298 201 341 375 297 590"/>
               <path class="demo-route known walk" pathLength="1" d="M100 169 C145 198 173 220 184 265"/>
               <path class="demo-route known train" pathLength="1" d="M184 265 C195 310 198 327 228 345"/>
+              <path class="route-tracer" pathLength="1" d="M184 265 C195 310 198 327 228 345"/>
               <path class="demo-route unknown shuttle" d="M228 345 C250 361 280 403 297 446"/>
               <circle class="map-node" cx="100" cy="169" r="9"/><circle class="map-node" cx="228" cy="345" r="9"/><circle class="map-node" cx="297" cy="446" r="9"/>
               <text class="map-label" x="66" y="150">T1</text><text class="map-label" x="195" y="327">LINK</text><text class="map-label" x="279" y="472">DEPOT</text>
@@ -1108,7 +1141,7 @@ footer .wrap{align-items:center;gap:24px}
       <article class="app-demo-window" data-open="false">
         <div class="app-demo-window-bar"><span><span class="number">02</span> / The evidence</span><span class="try">Try it</span></div>
         <div class="app-demo-window-copy">
-          <h3>Open the<br>source.</h3>
+          <h3>Open the source.</h3>
           <p>Tap the evidence row to open the claim, quote, source, and fetch time.</p>
         </div>
         <div class="app-ui">
@@ -1140,7 +1173,7 @@ footer .wrap{align-items:center;gap:24px}
       <article class="app-demo-window" data-open="false">
         <div class="app-demo-window-bar"><span><span class="number">03</span> / The unknown</span><span class="try">Try it</span></div>
         <div class="app-demo-window-copy">
-          <h3>Keep the<br>gap visible.</h3>
+          <h3>Keep the gap visible.</h3>
           <p>Tap the shuttle to focus it, then open the claim the app could not support.</p>
         </div>
         <div class="app-ui">
@@ -2113,8 +2146,15 @@ if (locked()) {
 (function () {
   var showcase = document.querySelector(".app-demo-showcase");
   if (!showcase) return;
+  var windows = showcase.querySelectorAll(".app-demo-window");
+  var replay = document.querySelector(".app-demo-replay");
+  var reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
+  var timers = [];
+  var visible = false;
+  var previewRunning = false;
+  var manual = false;
 
-  function setOpen(windowElement, open) {
+  function setOpen(windowElement, open, moveFocus) {
     var trigger = windowElement.querySelector("[data-demo-toggle]");
     var content = document.getElementById(trigger.getAttribute("aria-controls"));
     windowElement.dataset.open = String(open);
@@ -2123,46 +2163,96 @@ if (locked()) {
     if (content.classList.contains("app-ui-detail-sheet")) {
       windowElement.querySelector(".app-ui-appbar").inert = open;
       windowElement.querySelector(".app-ui-timeline").inert = open;
-      if (open) content.querySelector("[data-demo-close]").focus({ preventScroll: true });
-      else trigger.focus({ preventScroll: true });
-    } else if (!open && content.contains(document.activeElement)) {
+      if (moveFocus && open) content.querySelector("[data-demo-close]").focus({ preventScroll: true });
+      else if (moveFocus) trigger.focus({ preventScroll: true });
+    } else if (moveFocus && !open && content.contains(document.activeElement)) {
       trigger.focus({ preventScroll: true });
     }
+  }
+
+  function selectLeg(windowElement, button, moveFocus) {
+    windowElement.querySelector(".app-ui-plan").dataset.leg = button.dataset.demoLeg;
+    windowElement.querySelectorAll("[data-demo-leg]").forEach(function (leg) {
+      leg.setAttribute("aria-pressed", String(leg === button));
+    });
+    setOpen(windowElement, false, moveFocus);
+  }
+
+  function stopPreview() {
+    timers.forEach(clearTimeout);
+    timers = [];
+    previewRunning = false;
+  }
+
+  function schedule(delay, action) { timers.push(setTimeout(action, delay)); }
+
+  function playPreview() {
+    if (!visible || document.hidden || manual || reducedMotion.matches) return;
+    stopPreview();
+    previewRunning = true;
+    windows.forEach(function (windowElement) { setOpen(windowElement, false, false); });
+    windows[0].querySelector(".app-ui-plan").dataset.leg = "none";
+    windows[0].querySelectorAll("[data-demo-leg]").forEach(function (leg) {
+      leg.setAttribute("aria-pressed", "false");
+    });
+    windows[2].querySelector("[data-demo-select]").setAttribute("aria-pressed", "false");
+    schedule(700, function () { setOpen(windows[0], true, false); });
+    schedule(2300, function () { selectLeg(windows[0], windows[0].querySelector('[data-demo-leg="train"]'), false); });
+    schedule(2900, function () { setOpen(windows[1], true, false); });
+    schedule(4100, function () { windows[2].querySelector("[data-demo-select]").setAttribute("aria-pressed", "true"); });
+    schedule(4800, function () { setOpen(windows[2], true, false); });
+    schedule(7100, function () { setOpen(windows[1], false, false); });
+    schedule(7500, function () { setOpen(windows[2], false, false); });
+    schedule(9000, playPreview);
   }
 
   showcase.addEventListener("click", function (event) {
     if (!(event.target instanceof Element)) return;
     var button = event.target.closest("button");
     if (!button || !showcase.contains(button)) return;
+    manual = true;
+    stopPreview();
     var windowElement = button.closest(".app-demo-window");
     if (button.hasAttribute("data-demo-toggle")) {
-      setOpen(windowElement, windowElement.dataset.open !== "true");
+      setOpen(windowElement, windowElement.dataset.open !== "true", true);
     } else if (button.hasAttribute("data-demo-close")) {
-      setOpen(windowElement, false);
+      setOpen(windowElement, false, true);
     } else if (button.hasAttribute("data-demo-leg")) {
-      windowElement.querySelector(".app-ui-plan").dataset.leg = button.dataset.demoLeg;
-      windowElement.querySelectorAll("[data-demo-leg]").forEach(function (leg) {
-        leg.setAttribute("aria-pressed", String(leg === button));
-      });
-      setOpen(windowElement, false);
+      selectLeg(windowElement, button, true);
     } else if (button.hasAttribute("data-demo-select")) {
       button.setAttribute("aria-pressed", "true");
     }
   });
 
+  showcase.addEventListener("pointerenter", function () { manual = true; stopPreview(); });
+  showcase.addEventListener("focusin", function () { manual = true; stopPreview(); });
   showcase.addEventListener("keydown", function (event) {
     if (event.key !== "Escape" || !(event.target instanceof Element)) return;
     var windowElement = event.target.closest('.app-demo-window[data-open="true"]');
     if (windowElement) {
-      setOpen(windowElement, false);
+      setOpen(windowElement, false, true);
       event.preventDefault();
     }
   });
 
-  if (!window.IntersectionObserver ||
-      window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
-  var visible = false;
-  function update() { showcase.dataset.playing = String(visible && !document.hidden); }
+  if (!window.IntersectionObserver) return;
+  replay.hidden = reducedMotion.matches;
+  replay.addEventListener("click", function () {
+    manual = false;
+    stopPreview();
+    if (visible) playPreview();
+    else showcase.scrollIntoView({ behavior: "smooth", block: "center" });
+  });
+  function update() {
+    var playing = visible && !document.hidden && !reducedMotion.matches;
+    showcase.dataset.playing = String(playing);
+    if (!playing) stopPreview();
+    else if (!manual && !previewRunning) playPreview();
+  }
+  reducedMotion.addEventListener("change", function () {
+    replay.hidden = reducedMotion.matches;
+    update();
+  });
   document.addEventListener("visibilitychange", update);
   new IntersectionObserver(function (entries) {
     visible = entries[0].isIntersecting;

@@ -2,7 +2,7 @@
 
 ### Emilio's Work
 
-*Time worked: 12h 6m by clock checks (11:26 AM to 11:32 PM). This span includes unmeasured interruptions and is not an active-work estimate.*
+*Time worked: 12h 17m by clock checks (11:26 AM to 11:43 PM, the first clock check after the latest prompt). This span includes unmeasured interruptions and is not an active-work estimate.*
 
 ## Timeline
 
@@ -144,6 +144,43 @@ journal revision `04c9eeb` to PR #157, then updated both PR descriptions
 to match the interactive implementation. The journal PR's engine checks
 passed and both PRs were mergeable. Commented on #155 with the final
 behavior and verification. Issue #155 remains open until publication.
+
+**11:43 PM - Emilio asked for a more creative demo.**
+The interactive windows were correct but still looked like three dark
+infographic cards. Emilio asked for cooler motion and stronger product
+presentation. Rechecked #155 and website PR #11, pulled both branches,
+and recorded the revised direction on #155 before editing. Inspected the
+current Cluely product presentation as a visual reference. The useful
+principle was to let product UI lead the composition instead of placing
+it below a block of explanation.
+
+**11:50 PM - The showcase was restaged and animated.**
+Removed the dark card shells, moved the short captions below the UI, and
+placed three rounded native-style windows on a pale blue and warm light
+stage. They rise into view at staggered times and respond to hover and
+focus with a small perspective change. A replayable, nine-second sequence
+opens the route timeline, focuses the verified train on a zooming map,
+reveals its evidence sheet, selects the shuttle, and reveals the unsupported
+claim. A small moving highlight stays on the verified train path; the
+unsupported shuttle remains dashed. Detail cards reveal in order and the
+selected shuttle pulses briefly. The sequence stops when a visitor hovers,
+focuses, or uses a control, and it pauses when offscreen or in a hidden
+tab. Replay starts it again. Reduced-motion visitors get manual controls
+without the automatic sequence or animation. No product or engine code
+changed and no new dependency was added.
+
+**11:50 PM - Visual and behavior checks.**
+Reviewed the three-window stage at 1440px. The automated route and train
+evidence states advanced, the verified path highlight moved, and replay
+reset all three windows. Manually selected the shuttle, opened its claim,
+and confirmed Escape returned focus. At 390px the windows stack at full
+readable width with no horizontal overflow; the unsupported claim remained
+readable. Scrolling the showcase offscreen set playback to false, and the
+browser logged no errors. All seven inline scripts parse, 41 HTML IDs are
+unique, three control targets and two fragment links resolve, local paths
+exist, and `git diff --check` passes. Reduced-motion and absent-JavaScript
+behavior were checked in source, not emulated in the browser. The sample
+data disclaimer stays visible. Issue #155 remains open for publication.
 
 ---
 
