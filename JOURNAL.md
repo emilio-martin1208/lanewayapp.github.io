@@ -138,6 +138,13 @@ The browser reported no errors. All seven inline scripts parse; HTML IDs
 are unique, all three `aria-controls` targets exist, and `git diff --check`
 passes. Public deployment remains unverified and #155 stays open.
 
+**11:35 PM - The review records were updated.**
+Committed and pushed website revision `7e9d3dd` to PR #11 and product
+journal revision `04c9eeb` to PR #157, then updated both PR descriptions
+to match the interactive implementation. The journal PR's engine checks
+passed and both PRs were mergeable. Commented on #155 with the final
+behavior and verification. Issue #155 remains open until publication.
+
 ---
 
 # The Elastic Is Gone - Tuesday Sep 15
