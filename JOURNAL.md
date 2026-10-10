@@ -223,6 +223,14 @@ fragment links exist, and whitespace and Markdown ASCII checks pass. No
 product or engine code changed, so no routing benchmark ran. The public
 site remains unchanged and #155 stays open until publication.
 
+**12:06 AM Saturday Oct 10 - The revision was submitted for review.**
+Committed and pushed website change `8772a58` to PR #11 and product
+journal change `74e8f50` to PR #157. Updated both PR descriptions and
+commented on #155 with the implementation and checks. Both PRs were
+mergeable and the product journal's engine checks passed. The preview
+remains at `http://localhost:8076/#how-it-works`; the public site has not
+changed. Issue #155 remains open for publication and live verification.
+
 ---
 
 # The Elastic Is Gone - Tuesday Sep 15
