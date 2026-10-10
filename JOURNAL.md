@@ -2,7 +2,7 @@
 
 ### Emilio's Work
 
-*Time worked: 12h 45m by clock checks (11:26 AM Friday Oct 9 to 12:11 AM Saturday Oct 10, the first clock check after the latest prompt). This span includes unmeasured interruptions and is not an active-work estimate.*
+*Time worked: 13h 1m by clock checks (11:26 AM Friday Oct 9 to 12:27 AM Saturday Oct 10, the first clock check after the latest prompt). This span includes unmeasured interruptions and is not an active-work estimate.*
 
 ## Timeline
 
@@ -274,6 +274,32 @@ over the map and move to the route control in the visible area. Browser
 checks confirmed the pointer and route UI at 625px with no horizontal
 overflow. At 390px the pointer remains hidden and the page still fits.
 Inline scripts, HTML references, and whitespace checks pass again.
+
+**12:27 AM Saturday Oct 10 - Emilio asked for the site's own palette.**
+The interactive demo had warm cream surfaces, green verified markers, and
+orange route lines, numbers, glows, and scan effects. Emilio wanted cool
+grey, navy, and black with only minimal orange. Checked #155 and its
+comments, pulled both review branches, and commented on the design change
+before editing.
+
+**12:36 AM Saturday Oct 10 - The three windows were recolored.**
+The stage, map, app surfaces, and card borders now use cool greys. Navy
+carries the verified train path, selection, evidence, active-window glow,
+and source scan. Orange remains restrained in unverified badges, the
+dashed shuttle segment, and the unsupported claim. The unverified terminal
+walk is now dashed in muted slate, matching its explicit status rather
+than appearing as a solid verified route. The existing cursor walkthrough
+and controls were not changed.
+
+Reviewed the result at 1440px, the default 625px app browser, and 390px.
+The three windows still appear together on desktop; the Mac-style cursor
+appears during replay at 625px. The phone layout and unsupported claim fit
+without horizontal overflow. Manual route and evidence controls still
+respond, and browser logs show no warnings or errors. Seven inline scripts
+parse; 41 IDs are unique; HTML references and local paths resolve;
+`git diff --check` passes. No engine code changed, so no routing benchmark
+ran. Website PR #11 and product journal PR #157 remain the review path;
+issue #155 stays open until publication and a live check.
 
 ---
 
