@@ -1,8 +1,8 @@
-# Explain the Missing Leg on the Landing Page - Friday Oct 9
+# Show the Native App on the Landing Page - Friday Oct 9
 
 ### Emilio's Work
 
-*Time worked: 5h 47m by clock checks (11:26 AM to 5:13 PM). This span includes unmeasured interruptions and is not an active-work estimate.*
+*Time worked: 11h 21m by clock checks (11:26 AM to 10:47 PM). This span includes unmeasured interruptions and is not an active-work estimate.*
 
 ## Timeline
 
@@ -39,6 +39,41 @@ website change ships.
 Committed the page and journal as e5fd66a and opened website PR #11 from
 Emilio's fork against current public main. The PR has not been merged or
 deployed. Product issue #155 remains open for that final step.
+
+**10:28 PM - Emilio corrected the visual direction.**
+The four-step illustration was too abstract. Emilio asked for actual app UI
+demos with animated presentation, using Cluely's product showcase as a
+reference. Recorded the change on issue #155. Kept the copy correction from
+the first pass, but replaced the conceptual explainer rather than layering
+another diagram over it.
+
+**10:47 PM - Real screens captured and the showcase rebuilt.**
+Built the current iOS app in a temporary simulator directory. This Mac had no
+Laneway LaunchAgent on port 8000, so the native screens were driven through
+the app's saved-plan path using its canned demo content. This used no model
+call or live route request. Captured the route over the Pearson map, the full
+timeline, the train evidence sheet, and the focused unverified shuttle leg.
+A one-line temporary Swift change opened the saved plan at the large sheet
+detent for capture; it was reverted and does not enter either PR. Converted
+the simulator screenshots into four local JPEGs under `assets/app-demo/`.
+
+The page now presents those screens in a large phone stage. Four native radio
+controls let visitors select a screen without JavaScript. While the phone is
+in view, a small script advances the screens every six seconds; a manual
+selection stops playback. The script pauses offscreen and in a hidden tab,
+and does not run for reduced-motion visitors. On a phone viewport the short
+screen controls sit immediately above the device. The hero action now links
+straight to the app showcase. The text states that route data, map pin,
+timing, and the displayed source timestamp are illustrative, not travel
+directions or a live verification result.
+
+**10:47 PM - Browser and source checks.**
+Reviewed the desktop and 375px layouts, selected screens in both, and saw
+autoplay advance while the phone was visible. At 375px the document width
+equals the viewport width. All four local images loaded, and the browser
+reported no warnings or errors. All seven inline scripts parse. HTML IDs,
+fragment links, local assets, ASCII, and `git diff --check` pass. Public
+deployment remains unverified. Issue #155 stays open until the site ships.
 
 ---
 

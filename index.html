@@ -279,68 +279,66 @@ section{padding:clamp(64px,9vw,132px) 0}
 .reading h2{font-size:clamp(24px,3.2vw,34px);line-height:1.16;max-width:19ch;margin-bottom:26px}
 .reading .body{margin-left:clamp(0px,14vw,190px)}
 
-/* A user-controlled route story. The radio inputs keep every step usable
-   without script; motion only reveals the consequence of each choice. */
-.explainer-intro{display:flex;justify-content:space-between;align-items:end;gap:24px}
-.explainer-intro .lede{max-width:39ch;margin:0}
-.explainer-grid{display:grid;grid-template-columns:minmax(280px,.84fr) minmax(0,1.16fr);margin-top:42px;border-top:1px solid var(--hair);border-bottom:1px solid var(--hair)}
-.explainer-steps{border:0;margin:0;padding:0;min-width:0}
-.explainer-step{position:relative;display:grid;grid-template-columns:28px 1fr;gap:16px;padding:21px 24px 21px 0;border-bottom:1px solid var(--hair);cursor:pointer;transition:background-color .25s ease,padding-left .25s ease}
-.explainer-step:last-child{border-bottom:0}
-.explainer-step input{position:absolute;width:1px;height:1px;opacity:0}
-.explainer-step:has(input:focus-visible){outline:2px solid var(--accent);outline-offset:-3px}
-.explainer-step:has(input:checked){padding-left:18px;background:var(--surface);box-shadow:inset 3px 0 var(--accent)}
-.explainer-step .num{font:500 11px "Geist Mono",ui-monospace,Menlo,monospace;color:var(--accent);padding-top:3px}
-.explainer-step strong{display:block;font-size:16px;font-weight:550;line-height:1.35}
-.explainer-step small{display:block;margin-top:5px;color:var(--muted);font-size:13px;line-height:1.5}
-.explainer-visual{--unknown:#9B5B0B;position:relative;overflow:hidden;min-height:480px;padding:clamp(22px,3vw,42px);border-left:1px solid var(--hair);background:var(--surface)}
-@media (prefers-color-scheme:dark){.explainer-visual{--unknown:#F2AC53}}
-.explainer-visual::before{content:"";position:absolute;inset:0;background-image:linear-gradient(var(--hair) 1px,transparent 1px),linear-gradient(90deg,var(--hair) 1px,transparent 1px);background-size:38px 38px;opacity:.32;pointer-events:none}
-.explainer-visual>*{position:relative}
-.explainer-meta{display:flex;justify-content:space-between;gap:20px;color:var(--muted);font:500 11px "Geist Mono",ui-monospace,Menlo,monospace;letter-spacing:.06em;text-transform:uppercase}
-.explainer-request{display:flex;justify-content:space-between;gap:16px;align-items:center;margin-top:29px;padding:18px 20px;background:var(--bg);border:1px solid var(--hair);box-shadow:0 6px 22px rgba(23,33,51,.05);transition:border-color .3s ease,transform .3s ease}
-.explainer-request span{display:block;color:var(--muted);font:500 10px "Geist Mono",ui-monospace,Menlo,monospace;text-transform:uppercase;letter-spacing:.08em}
-.explainer-request strong{display:block;margin-top:4px;font-size:16px;font-weight:550;line-height:1.3}
-.explainer-request svg{flex:none;color:var(--accent)}
-.explainer-route{list-style:none;margin:18px 0 0;padding:0 0 0 12px}
-.explainer-leg{position:relative;display:grid;grid-template-columns:24px minmax(0,1fr) auto;align-items:center;gap:13px;min-height:53px;border-left:2px solid var(--accent);padding:0 0 0 15px;opacity:.24;transform:translateY(9px);transition:opacity .35s ease,transform .35s ease}
-.explainer-leg:nth-child(2){transition-delay:.06s}
-.explainer-leg:nth-child(3){transition-delay:.12s}
-.explainer-leg:nth-child(4){transition-delay:.18s}
-.explainer-leg-unknown{border-left:2px dashed var(--unknown)}
-.explainer-leg::before{content:"";position:absolute;left:-6px;top:calc(50% - 5px);width:9px;height:9px;border:2px solid var(--accent);border-radius:50%;background:var(--surface)}
-.explainer-leg-unknown::before{border-color:var(--unknown)}
-.explainer-leg .num{font:500 10px "Geist Mono",ui-monospace,Menlo,monospace;color:var(--muted)}
-.explainer-leg strong{font-size:14px;font-weight:500}
-.explainer-evidence{font:500 10px "Geist Mono",ui-monospace,Menlo,monospace;color:var(--verified);opacity:0;transform:translateX(-8px);transition:opacity .25s ease,transform .25s ease}
-.explainer-leg-unknown .explainer-evidence{color:var(--unknown)}
-.explainer-result{margin-top:18px;padding:15px 17px;background:var(--bg);border-left:3px solid var(--unknown);opacity:.25;transform:translateY(8px);transition:opacity .3s ease,transform .3s ease}
-.explainer-result strong{display:block;font-size:13px;font-weight:600}
-.explainer-result p{margin:4px 0 0;font-size:12px;line-height:1.5;color:var(--muted)}
-.explainer-grid:has(input:not([value="request"]):checked) .explainer-leg{opacity:1;transform:none}
-.explainer-grid:has(input[value="check"]:checked) .explainer-evidence,.explainer-grid:has(input[value="plan"]:checked) .explainer-evidence{opacity:1;transform:none}
-.explainer-grid:has(input[value="plan"]:checked) .explainer-result{opacity:1;transform:none}
-.explainer-grid:has(input[value="request"]:checked) .explainer-request{border-color:var(--accent);transform:translateY(-3px)}
-.explainer-caption{margin:15px 0 0;color:var(--muted);font-size:12px}
+/* The actual iOS interface is the demo. Native radio controls keep each
+   captured screen available when JavaScript or motion is disabled. */
+.app-demo-intro{display:flex;align-items:end;justify-content:space-between;gap:30px}
+.app-demo-intro .lede{max-width:39ch;margin:0}
+.app-demo-showcase{display:grid;grid-template-columns:minmax(320px,.84fr) minmax(0,1.16fr);margin-top:42px;border-radius:24px;overflow:hidden;background:#172133;color:#fff}
+.app-demo-story{z-index:1;display:flex;flex-direction:column;justify-content:center;padding:clamp(28px,4.2vw,62px)}
+.app-demo-kicker{color:#EEB35B;font:500 11px "Geist Mono",ui-monospace,Menlo,monospace;letter-spacing:.11em;text-transform:uppercase}
+.app-demo-story h3{max-width:12ch;margin:18px 0 12px;font-size:clamp(28px,2.8vw,43px);line-height:1.12;letter-spacing:-.04em}
+.app-demo-story>p{max-width:44ch;margin:0;color:#C8D0DD;font-size:15px;line-height:1.65}
+.app-demo-steps{border:0;padding:0;margin:32px 0 0;min-width:0}
+.app-demo-steps legend{position:absolute;width:1px;height:1px;overflow:hidden;clip-path:inset(50%);white-space:nowrap}
+.app-demo-step{position:relative;display:grid;grid-template-columns:30px 1fr;gap:14px;min-height:83px;padding:17px 12px;border-top:1px solid rgba(255,255,255,.19);cursor:pointer;color:#BCC6D4;transition:color .25s,background .25s}
+.app-demo-step:last-of-type{border-bottom:1px solid rgba(255,255,255,.19)}
+.app-demo-step:hover,.app-demo-step:has(input:checked){color:#fff;background:rgba(255,255,255,.07)}
+.app-demo-step:has(input:focus-visible){outline:2px solid #EEB35B;outline-offset:-2px}
+.app-demo-step input{position:absolute;width:1px;height:1px;opacity:0}
+.app-demo-step .num{padding-top:3px;color:#EEB35B;font:500 11px "Geist Mono",ui-monospace,Menlo,monospace}
+.app-demo-step strong{display:block;font-size:15px;font-weight:500;line-height:1.3}
+.app-demo-step small{display:block;margin-top:5px;color:#ABB8C9;font-size:12.5px;line-height:1.45}
+.app-demo-step::after{content:"";position:absolute;left:0;right:0;bottom:-1px;height:2px;background:#EEB35B;transform:scaleX(0);transform-origin:left}
+.app-demo-showcase[data-playing="true"] .app-demo-step:has(input:checked)::after{animation:app-demo-progress 6s linear both}
+@keyframes app-demo-progress{to{transform:scaleX(1)}}
+.app-demo-note{margin-top:22px!important;color:#B8C3D2!important;font-size:12px!important;line-height:1.5!important}
+.app-demo-stage{position:relative;display:grid;place-items:center;min-height:820px;overflow:hidden;isolation:isolate;background:radial-gradient(circle at 50% 40%,#4E6B86 0,#31445E 38%,#1F2E43 76%)}
+.app-demo-stage::before{content:"";position:absolute;inset:-20%;background:radial-gradient(circle at 48% 46%,rgba(238,179,91,.24),transparent 35%),repeating-linear-gradient(0deg,transparent 0 54px,rgba(255,255,255,.055) 55px),repeating-linear-gradient(90deg,transparent 0 54px,rgba(255,255,255,.055) 55px);animation:app-demo-drift 12s ease-in-out infinite alternate}
+@keyframes app-demo-drift{to{transform:translate(3%,3%) scale(1.04)}}
+.app-demo-stage::after{content:"";position:absolute;left:50%;bottom:4%;width:370px;height:80px;max-width:70%;border-radius:50%;background:rgba(4,10,19,.55);filter:blur(30px);transform:translateX(-50%)}
+.app-demo-topline,.app-demo-bottomline{position:absolute;z-index:2;left:28px;right:28px;display:flex;justify-content:space-between;gap:15px;color:#DCE5EF;font:500 10px "Geist Mono",ui-monospace,Menlo,monospace;letter-spacing:.07em;text-transform:uppercase}
+.app-demo-topline{top:25px}.app-demo-bottomline{bottom:24px}
+.app-demo-phone{position:relative;z-index:1;width:clamp(280px,31vw,352px);aspect-ratio:414/900;border:7px solid #090D13;border-radius:52px;overflow:hidden;background:#F8F4ED;box-shadow:0 0 0 2px #71849A,0 24px 70px rgba(0,0,0,.5);animation:app-demo-float 6s ease-in-out infinite alternate}
+@keyframes app-demo-float{to{transform:translateY(-10px)}}
+.app-demo-screen{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0;transform:translateY(25px) scale(.975);transition:opacity .55s ease,transform .8s cubic-bezier(.2,.8,.2,1)}
+.app-demo-showcase:has(input[value="route"]:checked) .app-demo-screen[data-screen="route"],
+.app-demo-showcase:has(input[value="timeline"]:checked) .app-demo-screen[data-screen="timeline"],
+.app-demo-showcase:has(input[value="evidence"]:checked) .app-demo-screen[data-screen="evidence"],
+.app-demo-showcase:has(input[value="unknown"]:checked) .app-demo-screen[data-screen="unknown"]{opacity:1;transform:none}
+.app-demo-caption{margin:15px 0 0;color:var(--muted);font-size:12px;line-height:1.55}
 @media (max-width:900px){
-  .explainer-intro{display:block}.explainer-intro .lede{margin-top:20px}
-  .explainer-grid{grid-template-columns:1fr}
-  .explainer-steps{display:grid;grid-template-columns:repeat(2,minmax(0,1fr))}
-  .explainer-step{padding:18px}.explainer-step:nth-child(odd){border-right:1px solid var(--hair)}
-  .explainer-step:nth-child(-n+2){border-bottom:1px solid var(--hair)}
-  .explainer-step:nth-child(n+3){border-bottom:0}
-  .explainer-visual{border-left:0;border-top:1px solid var(--hair)}
+  .app-demo-intro{display:block}.app-demo-intro .lede{margin-top:20px}
+  .app-demo-showcase{grid-template-columns:1fr}
+  .app-demo-story{padding:30px 30px 24px}
+  .app-demo-story h3{max-width:18ch}
+  .app-demo-steps{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:0 16px}
+  .app-demo-step:nth-last-of-type(-n+2){border-bottom:1px solid rgba(255,255,255,.19)}
+  .app-demo-stage{min-height:700px}
 }
 @media (max-width:560px){
-  .explainer-steps{grid-template-columns:1fr}
-  .explainer-step,.explainer-step:nth-child(odd){border-right:0}
-  .explainer-step:nth-child(3){border-bottom:1px solid var(--hair)}
-  .explainer-step{padding:15px 18px;gap:12px}
-  .explainer-step:has(input:checked){padding-left:22px}
-  .explainer-visual{min-height:0;padding:22px 18px}
-  .explainer-request{padding:15px 13px}.explainer-request strong{font-size:13px}
-  .explainer-leg{grid-template-columns:20px minmax(0,1fr);gap:8px;min-height:64px}
-  .explainer-evidence{grid-column:2;margin-top:-12px}
+  .app-demo-showcase{display:flex;flex-direction:column;border-radius:16px;margin-top:28px}
+  .app-demo-story{display:contents}
+  .app-demo-kicker{order:0;padding:22px 20px 0}
+  .app-demo-story h3{order:1;max-width:none;margin:8px 0 6px;padding:0 20px;font-size:25px}
+  .app-demo-story>p:not(.app-demo-note){position:absolute;width:1px;height:1px;overflow:hidden;clip-path:inset(50%)}
+  .app-demo-steps{order:2;display:flex;gap:8px;overflow-x:auto;margin:0;padding:10px 20px 18px}
+  .app-demo-step,.app-demo-step:nth-last-of-type(-n+2){flex:0 0 auto;display:block;min-height:0;padding:9px 12px;border:1px solid rgba(255,255,255,.23);border-radius:999px}
+  .app-demo-step strong{font-size:12px;white-space:nowrap}
+  .app-demo-step .num,.app-demo-step small{position:absolute;width:1px;height:1px;overflow:hidden;clip-path:inset(50%)}
+  .app-demo-stage{order:3;min-height:635px}
+  .app-demo-note{order:4;margin:0!important;padding:16px 20px 20px}
+  .app-demo-phone{width:min(69vw,284px);border-width:6px;border-radius:42px}
+  .app-demo-topline,.app-demo-bottomline{display:none}
 }
 
 /* Verification: a ledger, which is what a verifier produces. */
@@ -930,7 +928,7 @@ footer .wrap{align-items:center;gap:24px}
           <p class="eyebrow"><span class="status-dot" aria-hidden="true"></span> Verified routing. In development for iOS.</p>
       <h1>Everything in between</h1>
           <p class="intro-description">Trip plans that connect the shuttles, terminal walks, and missing links. With the evidence to back them up.</p>
-          <div class="intro-actions"><a class="btn" href="#route">Explore a journey <span aria-hidden="true">&#8599;</span></a><a class="link" href="#verification">How verification works</a></div>
+          <div class="intro-actions"><a class="btn" href="#how-it-works">See the app <span aria-hidden="true">&#8599;</span></a><a class="link" href="#route">Explore a journey</a></div>
         </div>
         <div class="connection-art" role="group" aria-label="Illustration of walking, rail and shuttle connections, with the shuttle connection marked unverified. Not travel directions.">
           <div class="art-heading"><span class="mono">The space between A and B</span><span class="art-status">Route illustration</span></div>
@@ -1020,33 +1018,39 @@ footer .wrap{align-items:center;gap:24px}
   </div>
 </section>
 
-<section class="explainer light-section" id="how-it-works" aria-labelledby="explainer-title">
+<section class="app-demo light-section" id="how-it-works" aria-labelledby="app-demo-title">
   <div class="wrap">
-    <p class="eyebrow section-index">02 / From request to route</p>
-    <div class="explainer-intro">
-      <h2 class="section-title" id="explainer-title">See What Happens<br>to a Missing Leg.</h2>
-      <p class="lede">Choose a step to see how an airport trip becomes one plan, including the part that cannot be verified.</p>
+    <p class="eyebrow section-index">02 / Inside the app</p>
+    <div class="app-demo-intro">
+      <h2 class="section-title" id="app-demo-title">The Route Is Only<br>the Beginning.</h2>
+      <p class="lede">See how the iOS app presents one plan, opens the evidence behind a leg, and keeps an unknown connection in view.</p>
     </div>
-    <div class="explainer-grid">
-      <div class="explainer-steps" role="radiogroup" aria-label="Steps in an illustrative Laneway trip">
-        <label class="explainer-step"><input type="radio" name="route-step" value="request" checked><span class="num">01</span><span><strong>Describe the trip</strong><small>Give your arrival point and destination in plain language.</small></span></label>
-        <label class="explainer-step"><input type="radio" name="route-step" value="connect"><span class="num">02</span><span><strong>Connect the legs</strong><small>Find the walk, rail, and shuttle links a road map may miss.</small></span></label>
-        <label class="explainer-step"><input type="radio" name="route-step" value="check"><span class="num">03</span><span><strong>Check the evidence</strong><small>Attach sources to supported legs. Flag the shuttle when pickup proof is missing.</small></span></label>
-        <label class="explainer-step"><input type="radio" name="route-step" value="plan"><span class="num">04</span><span><strong>Read one honest plan</strong><small>See the route with the unknown leg still visible before you travel.</small></span></label>
+    <div class="app-demo-showcase" data-playing="false">
+      <div class="app-demo-story">
+        <span class="app-demo-kicker">An actual Laneway screen flow</span>
+        <h3>See What the App Knows.</h3>
+        <p>Follow a sample Pearson trip through the native interface. Select a screen or watch the flow play.</p>
+        <fieldset class="app-demo-steps">
+          <legend>Choose an app screen</legend>
+          <label class="app-demo-step"><input type="radio" name="app-demo-screen" value="route" checked><span class="num">01</span><span><strong>Get One Plan</strong><small>The route appears over the map with its verification count.</small></span></label>
+          <label class="app-demo-step"><input type="radio" name="app-demo-screen" value="timeline"><span class="num">02</span><span><strong>Read Every Leg</strong><small>Walk, train, and shuttle each show their own status.</small></span></label>
+          <label class="app-demo-step"><input type="radio" name="app-demo-screen" value="evidence"><span class="num">03</span><span><strong>Open the Evidence</strong><small>The source, quote, and fetch time sit behind the claim.</small></span></label>
+          <label class="app-demo-step"><input type="radio" name="app-demo-screen" value="unknown"><span class="num">04</span><span><strong>See the Unknown</strong><small>The unsupported shuttle remains in the plan, clearly flagged.</small></span></label>
+        </fieldset>
+        <p class="app-demo-note">Captured from the iOS simulator using the app's canned offline sample. No live route was requested.</p>
       </div>
-      <div class="explainer-visual" aria-hidden="true">
-        <div class="explainer-meta"><span>A route taking shape</span><span>Illustration only</span></div>
-        <div class="explainer-request"><div><span>From</span><strong>Airport terminal</strong></div><svg width="26" height="16" viewBox="0 0 26 16"><path d="M1 8h23m-7-6 7 6-7 6" fill="none" stroke="currentColor" stroke-width="1.5"/></svg><div><span>To</span><strong>Off-airport rental</strong></div></div>
-        <ol class="explainer-route">
-          <li class="explainer-leg"><span class="num">01</span><strong>Terminal walk</strong><span class="explainer-evidence">Source linked</span></li>
-          <li class="explainer-leg"><span class="num">02</span><strong>Rail connection</strong><span class="explainer-evidence">Source linked</span></li>
-          <li class="explainer-leg explainer-leg-unknown"><span class="num">03</span><strong>Shuttle pickup</strong><span class="explainer-evidence">Unverified</span></li>
-          <li class="explainer-leg"><span class="num">04</span><strong>Counter walk</strong><span class="explainer-evidence">Source linked</span></li>
-        </ol>
-        <div class="explainer-result"><strong>One route, with the gap disclosed.</strong><p>Pickup details are unverified. Check the operator before relying on this leg.</p></div>
+      <div class="app-demo-stage" aria-hidden="true">
+        <div class="app-demo-topline"><span>Laneway for iOS</span><span>Product demo</span></div>
+        <div class="app-demo-phone">
+          <img class="app-demo-screen" data-screen="route" src="assets/app-demo/Route%20Preview.jpg" alt="" width="690" height="1500" loading="lazy" decoding="async">
+          <img class="app-demo-screen" data-screen="timeline" src="assets/app-demo/Route%20Timeline.jpg" alt="" width="690" height="1500" loading="lazy" decoding="async">
+          <img class="app-demo-screen" data-screen="evidence" src="assets/app-demo/Source%20Evidence.jpg" alt="" width="690" height="1500" loading="lazy" decoding="async">
+          <img class="app-demo-screen" data-screen="unknown" src="assets/app-demo/Unverified%20Shuttle.jpg" alt="" width="690" height="1500" loading="lazy" decoding="async">
+        </div>
+        <div class="app-demo-bottomline"><span>Native interface</span><span>Sample trip</span></div>
       </div>
     </div>
-    <p class="explainer-caption">Illustrative example, not live directions or a verified itinerary. The evidence ledger below shows how claims are judged.</p>
+    <p class="app-demo-caption">This is an interface demonstration, not travel directions. The sample route, timing, map pin, and displayed source timestamp are illustrative.</p>
   </div>
 </section>
 
@@ -1985,6 +1989,47 @@ if (locked()) {
   });
 
   anchor = read();
+}());
+</script>
+
+<script>
+(function () {
+  var showcase = document.querySelector(".app-demo-showcase");
+  if (!showcase || !window.IntersectionObserver ||
+      window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+
+  var screens = Array.prototype.slice.call(showcase.querySelectorAll('input[name="app-demo-screen"]'));
+  var stage = showcase.querySelector(".app-demo-stage");
+  var timer = null;
+  var manual = false;
+  var visible = false;
+
+  function stop() {
+    if (timer) window.clearInterval(timer);
+    timer = null;
+    showcase.dataset.playing = "false";
+  }
+
+  function start() {
+    if (timer || manual || !visible || document.hidden) return;
+    showcase.dataset.playing = "true";
+    timer = window.setInterval(function () {
+      var current = screens.findIndex(function (screen) { return screen.checked; });
+      screens[(current + 1) % screens.length].checked = true;
+    }, 6000);
+  }
+
+  screens.forEach(function (screen) {
+    screen.addEventListener("change", function () { manual = true; stop(); });
+  });
+  showcase.addEventListener("focusin", function () { manual = true; stop(); });
+  document.addEventListener("visibilitychange", function () {
+    if (document.hidden) stop(); else start();
+  });
+  new IntersectionObserver(function (entries) {
+    visible = entries[0].isIntersecting;
+    if (visible) start(); else stop();
+  }, { threshold: 0.45 }).observe(stage);
 }());
 </script>
 
