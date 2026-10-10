@@ -182,6 +182,13 @@ exist, and `git diff --check` passes. Reduced-motion and absent-JavaScript
 behavior were checked in source, not emulated in the browser. The sample
 data disclaimer stays visible. Issue #155 remains open for publication.
 
+**11:52 PM - Creative revision submitted for review.**
+Pushed website commit `03b0ec0` to PR #11 and product journal commit
+`9a61acf` to PR #157. Updated both PR descriptions and commented on #155
+with the changed presentation and verification. Both PRs were mergeable;
+the product journal's engine checks passed. The public site is unchanged,
+so #155 stays open until the website is published and checked live.
+
 ---
 
 # The Elastic Is Gone - Tuesday Sep 15
