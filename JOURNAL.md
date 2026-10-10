@@ -2,7 +2,7 @@
 
 ### Emilio's Work
 
-*Time worked: 11h 21m by clock checks (11:26 AM to 10:47 PM). This span includes unmeasured interruptions and is not an active-work estimate.*
+*Time worked: 11h 33m by clock checks (11:26 AM to 10:59 PM). This span includes unmeasured interruptions and is not an active-work estimate.*
 
 ## Timeline
 
@@ -74,6 +74,37 @@ equals the viewport width. All four local images loaded, and the browser
 reported no warnings or errors. All seven inline scripts parse. HTML IDs,
 fragment links, local assets, ASCII, and `git diff --check` pass. Public
 deployment remains unverified. Issue #155 stays open until the site ships.
+
+**10:59 PM - Emilio asked for three simultaneous windows.**
+The side list still made the visitor choose one feature at a time. Emilio
+wanted three separate windows that show three app features together. Checked
+the open issue and comments, pulled both branches, and recorded this change
+in direction on #155 before editing.
+
+**11:11 PM - The showcase became a three-window grid.**
+Replaced the side controls and single phone with separate plan, evidence,
+and unknown-leg windows. Each uses the captured native app screens. The plan
+window moves from the map preview to the leg timeline; the evidence window
+shows the claim, quote, source, and timestamp; the unknown window pans down
+to the shuttle marked unverified. All three stay on the page together. The
+motion pauses when the section is offscreen or the tab is hidden; reduced
+motion and absent JavaScript leave three useful static views. The sample
+route disclaimer remains visible below the windows. The browser could not
+be visually checked yet because the Mac locked during this pass. Source
+checks found all four images and fragment targets, unique IDs, and seven
+parseable inline scripts. Desktop and mobile visual review remains to do.
+
+**11:13 PM - The three windows were checked in the browser.**
+After the Mac unlocked, reviewed the page at 1280px and 375px. At desktop
+width, all three windows fit side by side; every capture loaded and the
+route image advanced from preview to timeline while evidence and the unknown
+leg stayed in view. At 375px the windows stack at full readable width and
+the page has no horizontal overflow. The shuttle label and disclosure are
+visible in the third window. Motion pauses when the showcase leaves view;
+the browser logged no warnings or errors. Removed the older hero claim that
+three legs were sourced, since the captured sample explicitly shows only
+one of three legs verified. The hero now says each leg shows its status.
+Public deployment remains unverified and #155 stays open.
 
 ---
 
